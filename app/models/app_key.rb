@@ -2,7 +2,7 @@ class AppKey < ActiveRecord::Base
   
   #GEMS USED
   #ACCESSORS
-  attr_accessible :app, :app_api_token, :app_password, :app_url, :app_username, :entity_name, :is_pending, :last_processed, :last_request_user_id, :last_requested_processing, :user_id, :incoming_channel, :error_message, :app_account_name, :dashboard_id, :range, :genre, :is_advertisement, :rss_last_modified_at, :categories, :html_url, :sort_id
+  attr_accessible :app, :app_api_token, :app_password, :app_url, :app_username, :entity_name, :is_pending, :last_processed, :last_request_user_id, :last_requested_processing, :user_id, :incoming_channel, :error_message, :app_account_name, :dashboard_id, :range, :genre, :is_advertisement, :rss_last_modified_at, :categories, :html_url, :sort_id, :favicon
   
   attr_accessor :incoming_channel
   

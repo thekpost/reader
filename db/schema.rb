@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602175132) do
+ActiveRecord::Schema.define(:version => 20130602210802) do
 
   create_table "app_keys", :force => true do |t|
     t.integer  "user_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130602175132) do
     t.text     "categories"
     t.text     "html_url"
     t.string   "sort_id"
+    t.text     "favicon"
   end
 
   create_table "authentications", :force => true do |t|
