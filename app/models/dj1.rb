@@ -9,7 +9,7 @@ class Dj1 < Struct.new(:akid)
       feed_app.update_attributes(entity_name: feed.title)
       FeedEntry.add_entries(feed_app, feed.entries)
       flag = false
-      if !akid.fav.blank?
+      if !feed_app.fav.blank?
         begin
           a = Nestful.get feed_app.fav
           flag = true
