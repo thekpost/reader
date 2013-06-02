@@ -34,8 +34,9 @@ class AppKey < ActiveRecord::Base
   
   def self.import(u, a_json)
     a_json.each do |t|
-      if u.app_keys.where(app_url: t[0]).first.blank?
-        z = AppKey.new(user_id: u.id, app_url: t[0], entity_name: t[1], categories: t[3], html_url: t[2], sort_id: t[4])
+      url_u = t[0].gsub("feed/http://", "http://")
+      if u.app_keys.where(app_url: url_u).first.blank?
+        z = AppKey.new(user_id: u.id, app_url: url_u, entity_name: t[1], categories: t[3], html_url: t[2], sort_id: t[4])
         z.save
         if !t[5].blank?
           if !t[5].first.blank?
