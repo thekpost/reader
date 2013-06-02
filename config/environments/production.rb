@@ -70,12 +70,12 @@ RedFeed::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  BASE_URL = "http://www.redfeed.com"
-  STATIC_WEBSITE = "http://www.redfeed.com"
-  REDIRECTING_URL = "http://www.redfeed.com"
+  BASE_URL = "http://reader.pykih.com"
+  STATIC_WEBSITE = "http://reader.pykih.com"
+  REDIRECTING_URL = "http://reader.pykih.com"
   
-  GOOGLE_KEY = "312453794851-p0tvfttqcj39ijljdml1rnr0jcrfoabc.apps.googleusercontent.com"
-  GOOGLE_SECRET = "tkmBg7mGAglb286LEzRunuLG"
+  GOOGLE_KEY = "312453794851-9d4fe32l9b50apautml3ab38rertb1hc.apps.googleusercontent.com"
+  GOOGLE_SECRET = "zwx460TVuxkt794VcEnxSa-Y"
   
   config.action_mailer.default_url_options = { :host => 'jarvis-bi.com' }
   config.middleware.use ExceptionNotifier,

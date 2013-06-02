@@ -1,8 +1,9 @@
-Manual Refresh
+1. Manual Refresh
+2. Folder Support Manual
+3. Removing a Feed / Unsubscribe
+4. Make background white
 
-Folder Support Manual
-
-Removing a Feed
+=================================================
 
 Published at date in imported feeds is wrong
 
