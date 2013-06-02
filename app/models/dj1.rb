@@ -16,5 +16,3 @@ class Dj1 < Struct.new(:akid)
   private
   
 end
-
-undefined method `title' for 0:Fixnum\n/app/app/models/dj1.rb:8:in `perform'\n/app/vendor/bundle/ruby/1.9.1/gems/delayed_job-3.0.5/lib/delayed/backend/base.rb:95:in `block in invoke_job'\n/app/vendor/bundle/ruby/1.9.1/gems/delayed_job-3.0.5/lib/delayed/lifecycle.rb:60:in `call'\n/app/vendor/bundle/ruby/1.9.1/gems/delayed_job-3.0.5/lib/delayed/lifecycle.rb:6
