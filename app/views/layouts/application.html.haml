@@ -22,14 +22,7 @@
           
         .span2.right
           %br
-          %table
-            %tr
-              %td= image_tag dp(current_user.email, 20)
-              %td &nbsp;&nbsp;
-              %td= link_to "Sign Out".html_safe, sign_out_path
-          
-          
-          
+          = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
     .container
       .row
         .span12= render partial: "layouts/shared/messages"
