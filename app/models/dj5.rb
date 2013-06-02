@@ -1,4 +1,4 @@
-class Dj5 < Struct.new(uid)
+class Dj5 < Struct.new(:uid)
   
   #POST LOGIN
   
