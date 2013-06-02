@@ -1,8 +1,8 @@
 body{font-family: ProximaNova, 'Helvetica Neue', helvetica, arial, sans-serif;}
 
-body.allold{background: url(bg.png) top left repeat-x white;font-family: ProximaNova, 'Helvetica Neue', helvetica, arial, sans-serif;}
+body.allold{background-color: white; font-family: ProximaNova, 'Helvetica Neue', helvetica, arial, sans-serif;}
 
-body.all{background: url(bg_g.png) top left repeat-y #E1E1E1;}
+body.all{background: url(top.png) top left repeat-x white;}
 
 a[href^="mailto"] {color: #228822;}
 a[href^="mailto"]:hover {background-color: #228822; color: white;}

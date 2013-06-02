@@ -32,6 +32,14 @@ class AppKey < ActiveRecord::Base
 
   #OTHER METHODS
   
+  def fav
+    if self.html_url.blank?
+      return nil
+    else
+      return self.html_url + "/favicon.ico"
+    end
+  end
+  
   def self.import(u, a_json)
     a_json.each do |t|
       url_u = t[0].gsub("feed/http://", "http://")

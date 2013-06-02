@@ -4,74 +4,38 @@
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application', :media => "all"
     = csrf_meta_tag
-    %title
-      Pykih Reader 
-      =# yield(:title) || "Effective managerial reporting with beautiful, one page dashboards."
+    %title pykih reader 
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{ "http-equiv"=>"content-type", :content => "text/html; charset=ISO-8859-1"}
     %meta{name: "keywords", content: "google reader replacement, Google Reader substitute, Google Reader alternative, Google Reader"}
-    %meta{name: "description", content: "Pykih is an open source feed reader aimed at being a community owned and community developed feed reading & sharing platform."}
-  - if current_user.blank? and !(action_name == "new" and controller_name == "sessions")
-    %body
-      .container
-        %br
-        .row
-          - if controller_name != "sessions"
-            - if action_name == "show" and controller_name == "users"
-              .span2= image_tag @user.photos.logo.first.dp
-            - else
-              .span7
-                - if !(controller_name == "sessions" and action_name == "sign_in")
-                  %a{href: "/sign_in", style: "color: black;"}
-                    %h1.f24= "<span style='font-weight: 1000;'>JARVIS</span><span style='font-weight: 100;'>:BI</span>".html_safe
-                    %h5.thin.black Effective managerial reporting with beautiful, one page dashboards.  
-                %br
-                %br
-                %br
-              .span5
-                %div{style: "background-color: #EBF7FF; padding-top: 6px;"}
-                  %table
-                    %tr
-                      %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      %td
-                        = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-inline', style: "margin-bottom: 0px;"}) do |f|
-                          %table
-                            - if params[:email_preset].blank?
-                              %td= f.input :email, :required => false, :autofocus => true, input_html: {:class=>"span2"}, :placeholder=>"Email", label: false
-                            - else
-                              %td= f.input :email, :required => false, :autofocus => true, input_html: {:class=>"span2", value: params[:email_preset]}, :placeholder=>"Email", label: false
-                            %td &nbsp;&nbsp;
-                            %td= f.input :password, :required => false, input_html: {:class=>"span2"}, :placeholder=>"Password", label: false
-                            %td &nbsp;&nbsp;
-                            %td.top= f.button :submit, "Sign in", class: "btn"
-                .right
-                  = link_to "Sign up", sign_up_path
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  = link_to "I forgot my username or password", new_password_path(resource_name)
-        %br
-        = render partial: "layouts/shared/messages"
+    %meta{name: "description", content: "pykih reader is an open source feed reader aimed at being a community owned and community developed feed reading & sharing platform."}
+  %body.all
+    .container
+      .row
+        .span3
+          %br
+          = link_to image_tag("logo.png"), root_url
+          %br
+          %br
+        .span7
+          %br
+          
+        .span2.right
+          %br
+          %table
+            %tr
+              %td= image_tag dp(current_user.email, 20)
+              %td &nbsp;&nbsp;
+              %td= link_to "Sign Out".html_safe, sign_out_path
+          
+          
+          
+    .container
+      .row
+        .span12= render partial: "layouts/shared/messages"
         = yield
-        - if controller_name != "sessions"
-          = render partial: "layouts/shared/footer"
-  - else
-    %body.all
-      .container
-        - if !current_user.blank?
-          .navbar.navbar-inner
-            .brand= link_to "Pykih Reader", root_url, class: "gray"
-            .nav-collapse
-              .pull-right
-                %ul.nav
-                  %li.divider-vertical
-                  - if user_signed_in?
-                    %li{:class => (@menu == "set") ? "active" : nil }= link_to "Settings", edit_user_path(current_user), :class => "f11"
-                    %li= link_to "Sign out", sign_out_path, :class => "f11"
-      .container
-        .row
-          .span12= render partial: "layouts/shared/messages"
-          = yield
-        - if !current_user.blank?
-          = render partial: "layouts/shared/footer"
+      - if !current_user.blank?
+        = render partial: "layouts/shared/footer"
 - if current_user.blank?
   = render partial: "layouts/ga"
 = render partial: "layouts/freshdesk"

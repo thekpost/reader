@@ -1,8 +1,24 @@
-1. Manual Refresh
-2. Folder Support Manual
-3. Removing a Feed / Unsubscribe
-4. Make background white
 5. http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
+
+5. Google Reader colour link
+6. Unread Feed names on sidebar in bold
+
+=================================================
+
+2. Font on homepage
+4. Alignment of Google Logo
+ 
+=================================================
+
+JavaScript UI Functionality
+
+1. On opening post, it should show immediately without refreshing page (collapsable)
+2. Collapsing the folders (just how Google Reader)
+3. Press Star or Specs, then store it without refreshing the page
+4. Add RSS URL with a modal pop-up
+5. Remove vertical spacing on sidebar
+6. Functionality to add new folders and remove folders. (Folder Support Manual)
+7. Next to each feed have a dropdown like in Google Reader with 1) UnSubscribe functionality and 2) move feed to another folder 3) Refresh now
 
 =================================================
 

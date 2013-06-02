@@ -1,10 +1,8 @@
 RedFeed::Application.routes.draw do
   
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", sessions: "sessions", :registrations => "registrations"}
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   
   devise_scope :user do
-    get "sign_in", :to => "sessions#new", as: :sign_in
-    get "sign_up", :to => "devise/registrations#new", as: :sign_up
     get "sign_out", :to => "devise/sessions#destroy", as: :sign_out
     get '/auth/google_oauth2/callback', to: 'omniauth_callbacks#all'
   end

@@ -1,4 +1,5 @@
-.span2
+.right= render partial: "layouts/shared/admin_superpower"
+.span3
   %ul.nav.nav-tabs.nav-stacked
     %li{class: @home.blank? ? nil : "active"}= link_to "Home (#{@user.feed_entries_count(nil, nil)})", user_path(current_user)
     %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true)
@@ -15,17 +16,41 @@
             %ul.nav.nav-tabs.nav-stacked
             - apps.each do |rr|
               - r = rr.app_key
-              %li{class: @akid == r.id.to_s ? "active" : nil}= link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
+              %li{class: @akid == r.id.to_s ? "active" : nil}
+                %table
+                  %tr
+                    %td
+                      - if !r.fav.blank?
+                        = image_tag r.fav
+                    %td &nbsp;&nbsp;
+                    %td
+                      - if @user.feed_entries_count('a', r.id.to_s) != 0
+                        = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                      - else
+                        = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
+                
+                
     - if !@without_tags.first.blank?
       %br
       %b Subscriptions
       %br
       %ul.nav.nav-tabs.nav-stacked
         - @without_tags.each do |r|
-          %li.f11{class: @akid == r.id.to_s ? "active" : nil}= link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), class: "f11"
-.span10.w2
+          %li.f11{class: @akid == r.id.to_s ? "active" : nil}
+            %table
+              %tr
+                %td
+                  - if !r.fav.blank?
+                    = image_tag r.fav
+                %td &nbsp;&nbsp;
+                %td
+                  - if @user.feed_entries_count('a', r.id.to_s) != 0
+                    = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                  - else
+                    = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
+.span9.w2
   %br
-  .span9
+  .span8
     .well{style: "padding: 0px 10px; margin: 0px;"}
       = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
         = f.error_notification
