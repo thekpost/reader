@@ -2,18 +2,24 @@
   .span12
     %br
     %br
+    = image_tag 'logo.png', class: "span4"
+    %br
 .row
-  .span12{style: "background-color: #EC0D0D;"}
-    .span1
+  .span12{style: "background-color: #C20000;"}
+    .span5
       %br
-    .span3
-      %br
-      = image_tag "logo.png"
+      %h3.white
+        pykih reader 
+        %span.thin 
+          is an open source feed reader aimed at being a community owned and community developed feed reading & sharing platform.
+          %br
+          %br
+          With Google Reader shutting down on July 1st 2013, pykih reader is your cleanest desktop alternative... Import and save all your subscriptions in one simple click!  
       %br
       %br
       .left= link_to image_tag("g.png"), "/auth/google_oauth2", class: "span3"
       
-    .span2
+    .span1
       %br
     .span5.white.text-home
       %br

@@ -2,6 +2,7 @@
 2. Folder Support Manual
 3. Removing a Feed / Unsubscribe
 4. Make background white
+5. http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
 
 =================================================
 
@@ -10,4 +11,4 @@ Published at date in imported feeds is wrong
 Blogger API
 - Blogs I am following on Blogger
 
-http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
+EC0D0D

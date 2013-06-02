@@ -29,7 +29,7 @@ class AppKey < ActiveRecord::Base
   scope :to_delete, where(:is_pending => "to_delete")
   
   #CUSTOM SCOPES
-  
+
   #OTHER METHODS
   
   def self.import(u, a_json)
