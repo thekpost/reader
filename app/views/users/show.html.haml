@@ -1,6 +1,6 @@
 .right= render partial: "layouts/shared/admin_superpower"
 .span3
-  %div{style: "overflow-y: scroll;"}
+  %div{style: "height: 550px;overflow-y: scroll;"}
     %ul.nav.nav-tabs.nav-stacked
       %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
       %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true), style: "color: black;"
