@@ -1,10 +1,14 @@
 5. http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
 
 6. Unread Feed names on sidebar in bold
-FAVICON
 No Links in Blue
 
 Two Verticals Sroll Bars 
+
+
+Developer Page
+About me
+FAQs / Help
 
 =================================================
 

@@ -1,51 +1,52 @@
 .right= render partial: "layouts/shared/admin_superpower"
 .span3
-  %ul.nav.nav-tabs.nav-stacked
-    %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
-    %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true), style: "color: black;"
-    %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true), style: "color: black;"
-    %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true), style: "color: black;"
-    - if !@tags.first.blank?
-      - @tags.each do |t|
-        - apps = t.tag_entries
-        - if !apps.blank?
-          - if !apps.first.blank?
-            %br
-            %b= t.name
-            %ul.nav.nav-tabs.nav-stacked
-            - apps.each do |rr|
-              - r = rr.app_key
-              %li{class: @akid == r.id.to_s ? "active" : nil}
-                %table
-                  %tr
-                    %td
-                      - if !r.favicon.blank?
-                        = image_tag r.favicon
-                    %td &nbsp;&nbsp;
-                    %td
-                      - if @user.feed_entries_count('a', r.id.to_s) != 0
-                        = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
-                      - else
-                        = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
-                
-                
-    - if !@without_tags.first.blank?
-      %br
-      %b Subscriptions
-      %ul.nav.nav-tabs.nav-stacked
-        - @without_tags.each do |r|
-          %li.f11{class: @akid == r.id.to_s ? "active" : nil}
-            %table
-              %tr
-                %td
-                  - if !r.favicon.blank?
-                    = image_tag r.favicon
-                %td &nbsp;&nbsp;
-                %td
-                  - if @user.feed_entries_count('a', r.id.to_s) != 0
-                    = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
-                  - else
-                    = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
+  %div{style: "overflow-y: scroll;"}
+    %ul.nav.nav-tabs.nav-stacked
+      %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
+      %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true), style: "color: black;"
+      %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true), style: "color: black;"
+      %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true), style: "color: black;"
+      - if !@tags.first.blank?
+        - @tags.each do |t|
+          - apps = t.tag_entries
+          - if !apps.blank?
+            - if !apps.first.blank?
+              %br
+              %b= t.name
+              %ul.nav.nav-tabs.nav-stacked
+              - apps.each do |rr|
+                - r = rr.app_key
+                %li{class: @akid == r.id.to_s ? "active" : nil}
+                  %table
+                    %tr
+                      %td
+                        - if !r.favicon.blank?
+                          = image_tag r.favicon
+                      %td &nbsp;&nbsp;
+                      %td
+                        - if @user.feed_entries_count('a', r.id.to_s) != 0
+                          = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                        - else
+                          = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
+
+
+      - if !@without_tags.first.blank?
+        %br
+        %b Subscriptions
+        %ul.nav.nav-tabs.nav-stacked
+          - @without_tags.each do |r|
+            %li.f11{class: @akid == r.id.to_s ? "active" : nil}
+              %table
+                %tr
+                  %td
+                    - if !r.favicon.blank?
+                      = image_tag r.favicon
+                  %td &nbsp;&nbsp;
+                  %td
+                    - if @user.feed_entries_count('a', r.id.to_s) != 0
+                      = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                    - else
+                      = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
 .span9.w2
   %br
   .span8

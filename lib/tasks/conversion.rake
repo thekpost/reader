@@ -5,7 +5,7 @@ namespace :conversion do
       flag = false
       if !a.fav.blank?
         begin
-          a = Nestful.get a.fav
+          Nestful.get a.fav
           flag = true
         rescue
           flag = false
