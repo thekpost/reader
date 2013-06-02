@@ -1,6 +1,5 @@
 5. http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
 
-5. Google Reader colour link
 6. Unread Feed names on sidebar in bold
 
 =================================================
@@ -19,6 +18,7 @@ JavaScript UI Functionality
 5. Remove vertical spacing on sidebar
 6. Functionality to add new folders and remove folders. (Folder Support Manual)
 7. Next to each feed have a dropdown like in Google Reader with 1) UnSubscribe functionality and 2) move feed to another folder 3) Refresh now
+8. Flash message when pull in progress and once done
 
 =================================================
 

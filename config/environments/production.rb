@@ -74,8 +74,8 @@ RedFeed::Application.configure do
   STATIC_WEBSITE = "http://reader.pykih.com"
   REDIRECTING_URL = "http://reader.pykih.com"
   
-  GOOGLE_KEY = "312453794851-9d4fe32l9b50apautml3ab38rertb1hc.apps.googleusercontent.com"
-  GOOGLE_SECRET = "zwx460TVuxkt794VcEnxSa-Y"
+  GOOGLE_KEY = ENV['GOOGLE_KEY']
+  GOOGLE_SECRET = ENV['GOOGLE_SECRET']
   
   config.action_mailer.default_url_options = { :host => 'jarvis-bi.com' }
   config.middleware.use ExceptionNotifier,
