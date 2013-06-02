@@ -10,4 +10,16 @@ class StaticPagesController < ApplicationController
     end
   end
   
+  def developer
+    render layout: "empty"
+  end
+  
+  def about
+    render layout: "empty"
+  end
+  
+  def faqs
+    render layout: "empty"
+  end
+  
 end

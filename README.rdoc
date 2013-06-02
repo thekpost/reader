@@ -12,8 +12,10 @@ Home page
 
 1. New design
 2. Developer Page
+-- Known Issues
 3. About us page
 4. Help / FAQs
+5. Feature Requests
  
 =================================================
 

@@ -14,6 +14,10 @@ RedFeed::Application.routes.draw do
     end
   end
   
+  match 'developer' => 'static_pages#developer', as: "developer"
+  match 'about' => 'static_pages#about', as: "about"
+  match 'faqs' => 'static_pages#faqs', as: "faqs"
+  
   #ROOT
   root :to => 'static_pages#index'
   

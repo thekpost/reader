@@ -58,7 +58,7 @@
             %tr
               %td= f.input :app_url, label: "RSS URL", input_html: {class: "field span6", rows: 1, autocomplete: :off, style: 'height: 20px;'}
               %td &nbsp;&nbsp;&nbsp;&nbsp;
-              %td= f.button :submit, "Add a new account", class: "btn-small"
+              %td= f.button :submit, "Add", class: "btn btn-danger"
     - if @feed_entries.first.blank? 
       .f11 No RSS entries found.
     - else
