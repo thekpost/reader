@@ -113,6 +113,8 @@ ga/what.png: ga/what-82abc56637732c4960dab9104400654c.png
 ga/what/index.png: ga/what-82abc56637732c4960dab9104400654c.png
 ga/where.png: ga/where-a5e6862c1c722b45ee776df8964ef3d6.png
 ga/where/index.png: ga/where-a5e6862c1c722b45ee776df8964ef3d6.png
+home.png: home-f7cfa16e2cad2cc50f1664dee6ac6066.png
+home/index.png: home-f7cfa16e2cad2cc50f1664dee6ac6066.png
 home_2.png: home_2-9c57c140fe75323713b83b8d69cf0b6e.png
 home_2/index.png: home_2-9c57c140fe75323713b83b8d69cf0b6e.png
 icon-lock.png: icon-lock-68fa898d66e292e10f3316303223f246.png
@@ -131,8 +133,8 @@ img-creditcards.png: img-creditcards-57414c0a9eae20935617f9f3f84c711d.png
 img-creditcards/index.png: img-creditcards-57414c0a9eae20935617f9f3f84c711d.png
 lha.png: lha-42b6f134ceb71cbf75fa5dddcbc3803f.png
 lha/index.png: lha-42b6f134ceb71cbf75fa5dddcbc3803f.png
-logo.png: logo-bd6fd03eaec6bf569ff3f41cd89d1177.png
-logo/index.png: logo-bd6fd03eaec6bf569ff3f41cd89d1177.png
+logo.png: logo-fbe9793021957d7c726eb70734a8b40c.png
+logo/index.png: logo-fbe9793021957d7c726eb70734a8b40c.png
 mark_read.png: mark_read-a60c806b570c6bf30238aeae0a628bf9.png
 mark_read/index.png: mark_read-a60c806b570c6bf30238aeae0a628bf9.png
 mark_to_read.png: mark_to_read-13edf9500322365d4623605bcea96f1d.png
