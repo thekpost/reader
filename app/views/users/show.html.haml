@@ -1,7 +1,7 @@
 .right= render partial: "layouts/shared/admin_superpower"
 .span3
   %ul.nav.nav-tabs.nav-stacked
-    %li{class: @home.blank? ? nil : "active"}= link_to "Home (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
+    %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
     %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true), style: "color: black;"
     %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true), style: "color: black;"
     %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true), style: "color: black;"
@@ -12,7 +12,6 @@
           - if !apps.first.blank?
             %br
             %b= t.name
-            %br
             %ul.nav.nav-tabs.nav-stacked
             - apps.each do |rr|
               - r = rr.app_key
@@ -33,7 +32,6 @@
     - if !@without_tags.first.blank?
       %br
       %b Subscriptions
-      %br
       %ul.nav.nav-tabs.nav-stacked
         - @without_tags.each do |r|
           %li.f11{class: @akid == r.id.to_s ? "active" : nil}
