@@ -25,10 +25,9 @@
                       %td &nbsp;&nbsp;
                       %td
                         - if @user.feed_entries_count('a', r.id.to_s) != 0
-                          = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                          = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
                         - else
-                          = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
-
+                          = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id), style: "color: black;"
 
       - if !@without_tags.first.blank?
         %br
@@ -44,9 +43,9 @@
                   %td &nbsp;&nbsp;
                   %td
                     - if @user.feed_entries_count('a', r.id.to_s) != 0
-                      = link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                      = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
                     - else
-                      = link_to r.entity_name, user_path(current_user, :akid => r.id), style: "color: black;"
+                      = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id), style: "color: black;"
 .span9.w2
   %br
   .span8

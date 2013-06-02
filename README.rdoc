@@ -3,6 +3,7 @@ Bugs / Pending Features:
 1. Add a url and it automatically converts it to RSS / ATOM url - Refer: http://stackoverflow.com/questions/1821835/how-to-get-rss-or-atom-feed-url-from-blogurl
 2. Unread Feed names on sidebar in bold
 3. Open one specific FEED is opened and then you open the URL, it refreshes the page back to HOME and you lose context
+4. Fav icon mess up
 
 =================================================
 
@@ -24,6 +25,7 @@ Pending Javascript Todos - Need to make it closer to Google Reader
 5. Functionality to add new folders and remove folders. (Folder Support Manual)
 6. Next to each feed have a dropdown like in Google Reader with 1) UnSubscribe functionality and 2) move feed to another folder 3) Refresh now
 7. Flash message when a pull is in progress for a user.
+8. Choose a FEED in lower part of 
 
 =================================================
 
