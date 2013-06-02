@@ -1,0 +1,28 @@
+= title("Edit Account")
+.span2
+  %br
+  %br
+  %br
+.span7.w2
+  .h.ruler.left
+    %br
+    %h3 Account Settings
+  %br
+  .span6
+    = simple_form_for([@user], html: {class: 'form-vertical'}) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, label: "Name", input_html: {class: "field span5", rows: 1}
+        = f.input :email, placeholder: "Email ID", label: "Email ID", input_html: {class: "field span5", rows: 1}
+        = f.input :incoming_channel, as: :hidden, input_html: {value: "sign_up"}
+        = f.input :password, :required => true, :wrapper => :prepend, :autocomplete => "off", label: "New password", :hint => "Leave blank if you don't want to change it" do 
+          = content_tag :span, "<i class='icon-lock'></i>".html_safe, class: "add-on"
+          = f.input_field :password, autocomplete: :off
+        = f.button :submit, "Update"
+.span3
+  = image_tag(dp(current_user.email, 100, current_user), class: "circle")
+  %br
+  %br
+  .f11
+    This is your Gravatar! You can change it 
+    = link_to "here.", "https://en.gravatar.com/site/login/", :target => "_blank"

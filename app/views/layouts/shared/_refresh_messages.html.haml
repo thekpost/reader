@@ -1,0 +1,13 @@
+- if (app_key_object.is_pending? or app_key_object.phase1?)
+  if app_key_object.is_pending?
+    .alert{:style=>"padding: 10px;"} 
+      Account
+      %b= app_key_object.to_s + ":: "
+      Please wait until we fetch the data. You will receive an email in next 2 to 15 minutes once done. Then refresh this page.
+  - elsif app_key_object.phase1?
+    .alert-success{:style=>"padding: 10px;"} 
+      Account
+      %b= app_key_object.to_s + ":: "
+      Please wait until we fetch the data. You will receive an email in next 2 to 15 minutes once done. Then refresh this page. (2)
+  %br
+  %br

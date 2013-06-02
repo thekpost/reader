@@ -1,0 +1,20 @@
+=title("Sign in")
+#centralized{:style => "width: 290px; margin-top: 81px;"}
+  .w2{:style => "padding-bottom: 10px;"}
+    .center.ruler 
+      %br  
+      %h4.thin Sign in to
+      %h3= link_to "redFeed Reader", "/"
+    %div{:style => "margin: 10px 30px 0px 30px;"}
+      %br
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical'}) do |f|
+        .navbar-search
+          = f.input :email, :required => false, :autofocus => true, :class=>"search-query span2 simple_form_search_bar", :placeholder=>"Email", :label => false
+          = f.input :password, :required => false, :class=>"search-query span2 simple_form_search_bar", :placeholder=>"Password", :label => false
+        = f.button :submit, "Sign in", :class => "btn"
+  .f12{:style => "padding-top: 5px;"}
+    %b Help:
+    = link_to "I forgot my username or password", new_password_path(resource_name)
+.footer
+  Don't have a redFeed Reader account? Contact us today at
+  = mail_to "rp@pykih.com"

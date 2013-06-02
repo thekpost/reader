@@ -1,0 +1,25 @@
+#curve-down{
+	border: none;
+	-webkit-border-radius: 100% / 33px;
+	-moz-border-radius: 100% / 33px;
+	border-radius: 100% / 33px;
+	-webkit-box-shadow: 0 8px 3px -5px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 8px 3px -5px rgba(0,0,0,.2);
+	box-shadow: 0 8px 3px -5px rgba(0,0,0,.2);
+	
+	display: block;
+	cursor: pointer;
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(249,249,249,1)), color-stop(100%, rgba(240,240,240,1)));
+	background: -webkit-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -moz-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -ms-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -o-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	-moz-box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+}

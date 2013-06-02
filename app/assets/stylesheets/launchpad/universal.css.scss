@@ -1,0 +1,60 @@
+body{font-family: ProximaNova, 'Helvetica Neue', helvetica, arial, sans-serif;}
+
+body.allold{background: url(bg.png) top left repeat-x white;font-family: ProximaNova, 'Helvetica Neue', helvetica, arial, sans-serif;}
+
+body.all{background: url(bg_g.png) top left repeat-y #E1E1E1;}
+
+a[href^="mailto"] {color: #228822;}
+a[href^="mailto"]:hover {background-color: #228822; color: white;}
+a[data-method="delete"]{color: gray; font-size: 15px;}
+a{color: #2035CA; text-decoration: none;}
+a:hover{text-decoration: underline;}
+a:active{color: black;}
+
+input, textarea{color: black;}
+
+.center{text-align: center;}
+.right{text-align: right;}
+.left{text-align: left;}
+
+.top{vertical-align: top;}
+.mid{vertical-align: middle;}
+.bottom{vertical-align: bottom;}
+
+strike{color: red;}
+
+.bip{border-bottom: 1px black dotted;}
+
+.f9{font-size: 9px;}
+.f10{font-size: 10px;}
+.f11{font-size: 11px;}
+.f12{font-size: 12px;}
+.f13{font-size: 13px;}
+.f14{font-size: 14px;}
+.f15{font-size: 15px;}
+.f18{font-size: 18px;}
+.f24{font-size: 24px;}
+.f33{font-size: 33px;}
+.f60{font-size: 60px;}
+
+label{font-size:12px;}
+.help-inline{color: red; font-weight: bold; letter-spacing: -1px;}
+
+.thin{font-weight: 200;}
+.semi-thin{font-weight: 400;}
+.normal{font-weight: normal;}
+.text-home{font-family: 'Trebuchet MS';}
+
+.red{color: #EC0D0D;}
+.white{color: white;}
+.glowblue{color: #32A5F2;}
+.baige{color: #8F794F;}
+.black{color: black;}
+.purple{color: #32A5F2;}
+.textgray{color: #4D4D4D;}
+.gray{color: gray;}
+.green{color: green;}
+.orange{color: #CA2F00;}
+.lightgray{color: lightgray;}
+
+.bg-data{background-color: #1F1F1F;}

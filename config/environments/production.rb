@@ -9,18 +9,23 @@ RedFeed::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true # Make it true for heroku
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  # Cache static assets for atleast 1 year
+  config.static_cache_control = "max-age=31536000, private"
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  # Ritvij Comment - Ideally this is false but had to do it because active_admin does not work on
+  # Heroku without this being true. also check the extra setting done at config.assets.precompile
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  # Defaults to nil and saved in location specified by config.assets.prefix
+  # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
@@ -28,7 +33,7 @@ RedFeed::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = false
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
@@ -59,9 +64,42 @@ RedFeed::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
+  config.active_support.deprecation = :log
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  BASE_URL = "http://www.redfeed.com"
+  STATIC_WEBSITE = "http://www.redfeed.com"
+  REDIRECTING_URL = "http://www.redfeed.com"
+  
+  GOOGLE_KEY = "312453794851-p0tvfttqcj39ijljdml1rnr0jcrfoabc.apps.googleusercontent.com"
+  GOOGLE_SECRET = "tkmBg7mGAglb286LEzRunuLG"
+  
+  config.action_mailer.default_url_options = { :host => 'jarvis-bi.com' }
+  config.middleware.use ExceptionNotifier,
+    exception_recipients: 'support@pykih.freshdesk.com',
+    sender_address: %{jarvisbi@pykih.com},
+    sections: ExceptionNotifier::Notifier.default_sections,
+    ignore_crawlers: %w{Googlebot bingbot},
+    email_format: true,
+    normalize_subject: true#, TODO - fix
+    #sections: %w{current_user} + ExceptionNotifier::Notifier.default_sections,
+  
+  #ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.smtp_settings = {
+    #:address              => "smtp.gmail.com",
+    #:port                 => "587",
+    #:domain               => "www.gmail.com",
+    #:user_name            => "theviri01@gmail.com",
+    #:password             => "thepykih12345",
+    #:authentication       => "plain",
+    #:enable_starttls_auto => true,
+    #:openssl_verify_mode  => 'none'
+  #}
+  
+  config.action_mailer.delivery_method   = :postmark
+  config.action_mailer.postmark_settings = { :api_key => "bc1a3da3-1526-4d48-a3cf-2ed2872013d1" }
+
 end

@@ -1,0 +1,16 @@
+=title("Resend confirmation instructions")
+.center
+  %h3.ruler Resend confirmation instructions
+  %br
+  %br
+.row
+  .span9
+    = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'form-horizontal' }) do |f|
+      = f.error_notification
+      .inputs
+        = f.input :email, :required => true
+      .form-actions
+        = f.button :submit, "Resend confirmation instructions"
+  .span3
+    %div{class: "alert alert-info"}
+      = render partial: "devise/shared/links"

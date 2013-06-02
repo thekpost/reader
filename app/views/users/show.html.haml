@@ -1,0 +1,72 @@
+.span2
+  %ul.nav.nav-tabs.nav-stacked
+    %li{class: @home.blank? ? nil : "active"}= link_to "Home (#{@user.feed_entries_count(nil, nil)})", user_path(current_user)
+    %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true)
+    %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true)
+    %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true)
+    - if !@tags.first.blank?
+      - @tags.each do |t|
+        - apps = t.tag_entries
+        - if !apps.blank?
+          - if !apps.first.blank?
+            %br
+            %b= t.name
+            %br
+            %ul.nav.nav-tabs.nav-stacked
+            - apps.each do |rr|
+              - r = rr.app_key
+              %li{class: @akid == r.id.to_s ? "active" : nil}= link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
+    - if !@without_tags.first.blank?
+      %br
+      %b Subscriptions
+      %br
+      %ul.nav.nav-tabs.nav-stacked
+        - @without_tags.each do |r|
+          %li.f11{class: @akid == r.id.to_s ? "active" : nil}= link_to r.entity_name + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), class: "f11"
+.span10.w2
+  %br
+  .span9
+    .well{style: "padding: 0px 10px; margin: 0px;"}
+      = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :user_id, as: :hidden, input_html: {value: current_user.id}
+          %table
+            %tr
+              %td= f.input :app_url, label: "RSS URL", input_html: {class: "field span6", rows: 1, autocomplete: :off, style: 'height: 20px;'}
+              %td &nbsp;&nbsp;&nbsp;&nbsp;
+              %td= f.button :submit, "Add a new account", class: "btn-small"
+    - if @feed_entries.first.blank? 
+      .f11 No RSS entries found.
+    - else
+      %table.table.table-condensed
+        %tbody
+          - @feed_entries.each do |f|
+            %tr{style: f.is_read ? "background-color: #F2F2F2;" : "background-color: white;", id: f.id}
+              %td.span1
+                - if f.is_star
+                  = link_to image_tag("starred.png"), user_feed_entry_path(current_user, f, is_star: false), method: :put
+                - else
+                  = link_to image_tag("star.png"), user_feed_entry_path(current_user, f, is_star: true), method: :put
+                - if f.is_to_read
+                  = link_to image_tag("mark_read.png"), user_feed_entry_path(current_user, f, is_to_read: false), method: :put
+                - else
+                  = link_to image_tag("mark_to_read.png"), user_feed_entry_path(current_user, f, is_to_read: true), method: :put
+              %td.span2.f11.gray= f.app_key.entity_name
+              %td.span8
+                = link_to f.name, user_path(current_user, entry: f, anchor: f.id)
+                - if !@feed_article.blank?
+                  - if f.id == @feed_article.id
+                    - if !@feed_article.content.blank?
+                      %br
+                      = @feed_article.content.html_safe
+                    - elsif !@feed_article.summary.blank?
+                      %br
+                      = @feed_article.summary.html_safe
+              %td.span1
+                %table.table-borderless.table-condensed
+                  %tr
+                    %td.f11.gray= smart_date(f.published_at)
+                    %td.f11.gray= link_to "<i class='icon-share-alt'></i>".html_safe, user_feed_entry_path(current_user, f), target: "_blank", class: "gray"
+      %br
+      = paginate @feed_entries

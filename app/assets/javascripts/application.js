@@ -10,6 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// TODO - Fetch more data from available address via http://www.zippopotam.us
+// 
+/* From Gems */
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require twitter/bootstrap
+
+/* From app/assets */
+//= require_tree ./launchpad/

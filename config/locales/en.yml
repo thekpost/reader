@@ -2,4 +2,110 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  empty_all: "Leave empty to select all."
+  ga_mediums:
+    free: Organic Unpaid Search
+    paid: Paid Search
+    referral: Referral - other websites
+    none: Direct Traffic
+    custom: Custom medium
+    ifbyphone: IfByPhone.com  
+  apps:
+    FormHub: FormHub.org Surveys
+    GA: Google Analytics
+    LightHouse: LightHouseApp.com
+  FormHub:
+    label: "Formhub Surveys"
+  LightHouse:
+    label: "LightHouse Projects"
+  creation:
+    success: "Successfully created."
+    failure: "Error:: Failed to create."
+  updation:
+    success: "Successfully updated."
+    failure: "Error:: Failed to update."
+  cancellation:
+    success: "Successfully cancelled."
+    failure: "Error:: Failed to cancel."
+  delete:
+    success: "Successfully deleted."
+    failure: "Error:: Failed to delete."
+    c: "Are you sure you want to delete?"
+  permission:
+    denied: "Error:: Permission Denied"
+  gyan:
+    legends: "Explain within excel extracts what does a certain field mean. This is generally used to explain valid values of tickets states, priority, etc. These legends get added to the top of your excel extracts."
+    project_impls: "Sometimes a project might have started but you were able to log it into LightHouseApp only on a later date. In such cases, the created_date of project and tickets are later than actual date. To fix the AGE / DAYS AGO fields in the reports, you can add a custom created at date here and the reports will override the LightHouseApp created at date."
+  langauge:
+    ab: Abkhazian
+    aa: Afar
+    af: Afrikaans
+    sq: Albanian
+    am: Amharic
+    ar: Arabic
+    an: Aragonese
+    hy: Armenian
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    ba: Bashkir
+    eu: Basque
+    bn: Bengali (Bangla)
+    dz: Bhutani
+    bh: Bihari
+    bi: Bislama
+    br: Breton
+    bg: Bulgarian
+    my: Burmese
+    be: Byelorussian (Belarusian)
+    km: Cambodian
+    ca: Catalan
+    zh: Mandarin
+    co: Corsican
+    hr: Croatian
+    cs: Czech
+    da: Danish
+    nl: Dutch
+    en: English
+    eo: Esperanto
+    et: Estonian
+    fo: Faeroese
+    fa: Farsi
+    fj: Fiji
+    fi: Finnish
+    fr: French
+    fy: Frisian
+    gl: Galician
+    gd: Gaelic (Scottish)
+    gv: Gaelic (Manx)
+    ka: Georgian
+    de: German
+    el: Greek
+    kl: Greenlandic
+    gn: Guarani
+    gu: Gujarati
+    ht: Haitian Creole
+    ha: Hausa
+    he: Hebrew
+    hi: Hindi
+    hu: Hungarian
+    is: Icelandic
+    io: Ido
+    id: Indonesian
+    ia: Interlingua
+    ie: Interlingue
+    iu: Inuktitut
+    ik: Inupiak
+    ga: Irish
+    it: Italian
+    ja: Japanese
+    jv: Javanese
+    kn: Kannada
+    ks: Kashmiri
+    kk: Kazakh
+    rw: Kinyarwanda (Ruanda)
+    ky: Kirghiz
+    rn: Kirundi (Rundi)
+    ko: Korean
+    ku: Kurdish
+    lo: Laothian

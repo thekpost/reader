@@ -1,0 +1,51 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+@import "fontawesome";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: "/assets/fontawesome-webfont.eot";
+@fontAwesomeWoffPath: "/assets/fontawesome-webfont.woff";
+@fontAwesomeTtfPath: "/assets/fontawesome-webfont.ttf";
+@fontAwesomeSvgPath: "/assets/fontawesome-webfont.svg";
+
+// customizations via bootstrap variables
+@navbarBackground: black;
+@tableBackgroundAccent: #F0F4F9;
+@tableBackgroundHover: none;
+@infoBackground: #F7F0E2;
+@bodyBackground: white;
+@linkColor: #2473C4;
+@textColor: black;
+@dropdownLinkColor: #2473C4;
+@placeholderText: gray;
+
+#show_pie_chart_all, #show_pie_chart_open, #show_pie_chart_closed{height: 125px;}
+
+// bootstrap customizations 
+.page.current{color: white;}
+.label-info{background-color: #3A87AD;}
+.alert-footer{background-color: #EBF7FF; border: none;}
+.alert.alert-success{background-color: #FCFDDD; border: 1px solid #BDBDBD; color: #2E2E2E;}
+.well{background-color: #EFEFEF;border: none; }
+ul.breadcrumb{border: none; background: none; margin: 0px; padding: 0xp; a{color: gray;} color: lightgray; li{padding: 0px 6px 0px 0px;}}
+.tabbable{ul.nav.nav-tabs{background-color: #EBF1F6; border: none;}}
+.help-block{font-size: 11px; color: #A4967D;}
+ul.nav.nav-tabs.nav-stacked{
+a{border: none; padding: 6px 0px;}
+a:hover{border: none; padding: 6px 0px;background-color: none; color: blue;}
+li.active{a{color: black; font-weight: bold; border:none; background-color: transparent; }}}
+.simple_form_search_bar{background-color: white; border: 1px lightgray solid;}
+.table-borderless td,
+.table-borderless th{ border: 0 !important }
+.navbar .navbar-top .navbar-inner .container .nav-collapse ul.nav{margin-bottom: 0px; border: none;}
+
+// forms
+
+.form-actions{background: none;border: none;}
+.form-horizontal .form-actions{padding-left: 160px;}
+.form-left{width: 140px; text-align: right; font-size: 11px;}
+.form-right{padding: 0px 0px 5px 20px;}
