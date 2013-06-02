@@ -1,4 +1,4 @@
-class Dj2 < Struct.new
+class Dj2 < Struct.new()
   
   #NIGHTLY REFRESH ALL FEEDS
   
