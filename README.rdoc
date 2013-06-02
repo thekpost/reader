@@ -4,6 +4,7 @@ Bugs / Pending Features:
 2. Unread Feed names on sidebar in bold
 3. Open one specific FEED is opened and then you open the URL, it refreshes the page back to HOME and you lose context
 4. Fav icon mess up
+5. If count is zero then do not show
 
 =================================================
 
