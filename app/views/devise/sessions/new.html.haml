@@ -4,7 +4,7 @@
     .center.ruler 
       %br  
       %h4.thin Sign in to
-      %h3= link_to "redFeed Reader", "/"
+      %h3= link_to "Pykih Reader", "/"
     %div{:style => "margin: 10px 30px 0px 30px;"}
       %br
       = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical'}) do |f|
@@ -16,5 +16,5 @@
     %b Help:
     = link_to "I forgot my username or password", new_password_path(resource_name)
 .footer
-  Don't have a redFeed Reader account? Contact us today at
+  Don't have a Pykih Reader account? Contact us today at
   = mail_to "rp@pykih.com"
