@@ -1,6 +1,6 @@
-class Dj2 < Struct.new(uid)
+class Dj5 < Struct.new(uid)
   
-  #NIGHTLY REFRESH ALL FEEDS
+  #POST LOGIN
   
   def perform
     user = User.find(uid)

@@ -1,3 +1,9 @@
+Manual Refresh
+
+Folder Support Manual
+
+Removing a Feed
+
 Published at date in imported feeds is wrong
 
 Blogger API

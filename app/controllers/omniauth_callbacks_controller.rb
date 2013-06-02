@@ -21,7 +21,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_and_redirect user
     
     if flag_existing_user
-      Delayed::Job.enqueue Dj2.new(user.id)
+      Delayed::Job.enqueue Dj5.new(user.id)
     else
       Delayed::Job.enqueue Dj4.new(user.id)
     end 
