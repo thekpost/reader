@@ -19,7 +19,8 @@
           %br
         .span7
           %br
-          
+          - if !current_user.blank?
+            .postit.f11{style: "padding: 2px;"} We just went live and are fixing bugs on-the-go. Please be patient.
         .span2.right
           %br
           - if !current_user.blank?
