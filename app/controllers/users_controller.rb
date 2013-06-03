@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   
   before_filter :authenticate_user!, :allowed?
   
+  def admin
+    if !@user.is_admin?
+      redirect_to user_path(current_user)
+    end
+  end
+  
   def show
     @tags = @user.tags
     @without_tags = AppKey.without_tags(@user)

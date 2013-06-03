@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   end
     
   def is_admin?
-    (email == "rp@pykih.com" or email == "ritvij.j@gmail.com") ? true : false
+    (email == "rp@pykih.com" or email == "ritvij.j@gmail.com" or email == "modimihir@gmail.com") ? true : false
   end
   
   def feed_entries_count(g, akid)

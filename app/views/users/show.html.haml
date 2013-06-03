@@ -1,4 +1,5 @@
-.right= render partial: "layouts/shared/admin_superpower"
+- if current_user.is_admin?
+  .right= link_to "Admin", admin_user_path(current_user)
 .span3
   %div{style: "height: 600px; overflow-y: scroll; "}
     %ul.nav.nav-tabs.nav-stacked

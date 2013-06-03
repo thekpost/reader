@@ -8,6 +8,7 @@ RedFeed::Application.routes.draw do
   end
   
   resources :users do
+    get "admin", on: :member
     resources :feed_entries
     resources :app_keys do
       get "request_fetch", on: :member
