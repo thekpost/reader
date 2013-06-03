@@ -44,9 +44,6 @@ class FeedEntry < ActiveRecord::Base
           author: entry.author,
           categories: entry.categories,
           guid: entry.id)
-          
-          rails 
-          
       end
     end
   end
