@@ -2,10 +2,10 @@
 .span3
   %div{style: "height: 600px; overflow-y: scroll; "}
     %ul.nav.nav-tabs.nav-stacked
-      %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user), style: "color: black;"
-      %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true), style: "color: black;"
-      %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true), style: "color: black;"
-      %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true), style: "color: black;"
+      %li{class: @home.blank? ? nil : "active"}= link_to "All Feeds (#{@user.feed_entries_count(nil, nil)})", user_path(current_user)
+      %li{class: @to_read.blank? ? nil : "active"}= link_to "To Read (#{@user.feed_entries_count('r', nil)})", user_path(current_user, :r => true)
+      %li{class: @is_star.blank? ? nil : "active"}= link_to "Stared (#{@user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true)
+      %li{class: @history.blank? ? nil : "active"}= link_to "History (#{@user.feed_entries_count('h' , nil)})", user_path(current_user, :h => true)
       - if !@tags.first.blank?
         - @tags.each do |t|
           - apps = t.tag_entries
@@ -25,9 +25,9 @@
                       %td &nbsp;&nbsp;
                       %td
                         - if @user.feed_entries_count('a', r.id.to_s) != 0
-                          = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                          = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
                         - else
-                          = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id), style: "color: black;"
+                          = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
 
       - if !@without_tags.first.blank?
         %br
@@ -43,9 +43,9 @@
                   %td &nbsp;&nbsp;
                   %td
                     - if @user.feed_entries_count('a', r.id.to_s) != 0
-                      = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id), style: "color: black;"
+                      = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
                     - else
-                      = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id), style: "color: black;"
+                      = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
 .span9.w2
   .well{style: "padding: 0px 10px; margin: 0px;"}
     = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
@@ -73,9 +73,12 @@
                 = link_to image_tag("mark_read.png"), user_feed_entry_path(current_user, f, is_to_read: false), method: :put
               - else
                 = link_to image_tag("mark_to_read.png"), user_feed_entry_path(current_user, f, is_to_read: true), method: :put
-            %td.span2.f11.gray= f.app_key.entity_name
-            %td.span8
-              = link_to f.name, user_path(current_user, entry: f, anchor: f.id)
+            %td.span9
+              .f11.gray= f.app_key.entity_name
+              %table.table-borderless.table-condensed
+                %tr
+                  %td= link_to f.name, user_path(current_user, entry: f, anchor: f.id)
+                  %td.f11.gray= link_to "<i class='icon-share-alt'></i>".html_safe, user_feed_entry_path(current_user, f), target: "_blank", class: "gray", style: "text-decoration: none;"
               - if !@feed_article.blank?
                 - if f.id == @feed_article.id
                   - if !@feed_article.content.blank?
@@ -84,11 +87,7 @@
                   - elsif !@feed_article.summary.blank?
                     %br
                     = @feed_article.summary.html_safe
-            %td.span1
-              %table.table-borderless.table-condensed
-                %tr
-                  %td.f11.gray= smart_date(f.published_at)
-                  %td.f11.gray= link_to "<i class='icon-share-alt'></i>".html_safe, user_feed_entry_path(current_user, f), target: "_blank", class: "gray"
+            %td.span1.f11.gray= smart_date(f.published_at)
     %br
     = paginate @feed_entries
     
