@@ -16,36 +16,38 @@
               %ul.nav.nav-tabs.nav-stacked
               - apps.each do |rr|
                 - r = rr.app_key
-                %li{class: @akid == r.id.to_s ? "active" : nil}
-                  %table
-                    %tr
-                      %td
-                        - if !r.favicon.blank?
-                          = image_tag r.favicon, size: '20x20'
-                      %td &nbsp;&nbsp;
-                      %td
-                        - if @user.feed_entries_count('a', r.id.to_s) != 0
-                          = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
-                        - else
-                          = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
+                - if !r.blank?
+                  %li{class: @akid == r.id.to_s ? "active" : nil}
+                    %table
+                      %tr
+                        %td
+                          - if !r.favicon.blank?
+                            = image_tag r.favicon, size: '20x20'
+                        %td &nbsp;&nbsp;
+                        %td
+                          - if @user.feed_entries_count('a', r.id.to_s) != 0
+                            = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
+                          - else
+                            = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
 
       - if !@without_tags.first.blank?
         %br
         %b Subscriptions
         %ul.nav.nav-tabs.nav-stacked
           - @without_tags.each do |r|
-            %li.f11{class: @akid == r.id.to_s ? "active" : nil}
-              %table
-                %tr
-                  %td
-                    - if !r.favicon.blank?
-                      = image_tag r.favicon, size: '20x20'
-                  %td &nbsp;&nbsp;
-                  %td
-                    - if @user.feed_entries_count('a', r.id.to_s) != 0
-                      = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
-                    - else
-                      = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
+            - if !r.blank?
+              %li.f11{class: @akid == r.id.to_s ? "active" : nil}
+                %table
+                  %tr
+                    %td
+                      - if !r.favicon.blank?
+                        = image_tag r.favicon, size: '20x20'
+                    %td &nbsp;&nbsp;
+                    %td
+                      - if @user.feed_entries_count('a', r.id.to_s) != 0
+                        = link_to truncate(r.entity_name, :length => 35, :omission => '...') + " (#{@user.feed_entries_count('a', r.id.to_s)})", user_path(current_user, :akid => r.id)
+                      - else
+                        = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
 .span9.w2
   .well{style: "padding: 0px 10px; margin: 0px;"}
     = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
