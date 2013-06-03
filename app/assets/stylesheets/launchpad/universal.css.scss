@@ -7,7 +7,7 @@ body.all{background: url(top.png) top left repeat-x white;}
 a[href^="mailto"] {color: #228822;}
 a[href^="mailto"]:hover {background-color: #228822; color: white;}
 a[data-method="delete"]{color: gray; font-size: 15px;}
-a{color: #2035CA; text-decoration: none;}
+a{color: gray; text-decoration: underline;}
 a:hover{text-decoration: underline;}
 a:active{color: black;}
 

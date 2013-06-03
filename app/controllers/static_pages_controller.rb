@@ -6,20 +6,20 @@ class StaticPagesController < ApplicationController
       @user = current_user
       redirect_to user_path(current_user)
     else
-      render "index", layout: "empty"
+      render "index"
     end
   end
   
   def developer
-    render layout: "empty"
+
   end
   
   def about
-    render layout: "empty"
+
   end
   
   def faqs
-    render layout: "empty"
+
   end
   
 end

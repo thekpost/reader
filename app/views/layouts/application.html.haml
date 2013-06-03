@@ -22,7 +22,12 @@
           
         .span2.right
           %br
-          = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
+          - if !current_user.blank?
+            = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
+          - else
+            %ul.nav.nav-pills
+              %li{class: (action_name == "developer") ? "active" : nil}= link_to "Developer", developer_path, style: "text-decoration: none;"
+              %li{class: (action_name == "about") ? "active" : nil}= link_to "About", about_path, style: "text-decoration: none;"
     .container
       .row
         .span12= render partial: "layouts/shared/messages"

@@ -1,73 +1,34 @@
-.row
-  .span12
+.span5{style: "height: 450px;"}
+  %br
+  %br
+  .main-tag A clean, no bullshit Google Reader replacement
+  %br
+  %h3.thin 
+    Import and save all your Google Reader 
     %br
-    %br
-    = image_tag 'logo.png', class: "span4"
-    %br
-.row
-  .span12{style: "background-color: #C20000;"}
-    .span5
-      %br
-      %h3.white
-        pykih reader 
-        %span.thin 
-          is an open source feed reader aimed at being a community owned and community developed feed reading & sharing platform.
-          %br
-          %br
-          With Google Reader shutting down on July 1st 2013, pykih reader is your cleanest desktop alternative... Import and save all your subscriptions in one simple click!  
-      %br
-      %br
-      .left= link_to image_tag("g.png"), "/auth/google_oauth2", class: "span3"
-      
-    .span1
-      %br
-    .span5= image_tag "home.png"
-    .span11.white.text-home
-      %br
-      %br
-    .span3.white.text-home
-      %div{style: "border-top: 4px white solid; padding-left: 10px;"}
-        %h3 Save your feeds
-        %h3.thin Easily import your Google Reader subscriptions
-    .span1
-      %br
-    .span3.white.text-home
-      %div{style: "border-top: 4px white solid; padding-left: 10px;"}
-        %h3 Clean, no frills 
-        %h3.thin UI Get your content, no bullshit
-    .span1
-      %br
-    .span3.white.text-home
-      %div{style: "border-top: 4px white solid; padding-left: 10px;"}
-        %h3 Manage your reading list
-        %h3.thin Native support for favorites & read later
-      %br
-      %br
-.row
-  .span12
-    %br
-    %br
-    %br
-    %br
-    %h3.red 
-      Introducing pykih reader
-      %sup beta
-    .right Sunday, June 02, 2013
-    %br
-    %h4.thin
-      Google Reader will shut down on July 1, 2013 leaving a feeling of emptiness every internet user will feel. Last year, Google killed the social component of Reader to encourage sharing Google+, killing a long-evolved community of reading friends overnight.
-      %br
-      %br
-      We realise the need to build platforms which belong to the users who invest hours in making it work… platforms where users decide how long the it lasts and what components stay.
-      %br
-      %br
-      Our first such effort was to build an open source reader, a replacement to Google Reader to begin with, which can then shape up to be your homepage, your newspaper, your search provider, your social hub… you decide!  
-      %br
-      %br
-      With inspiration and weeks of work, we are ready to unveil the first public beta of pykih reader, an open source feed reader. This is a working release which lets you import and save your Google Reader feeds into a familiar user interface so you never feel like you’ve left home!
-      %br
-      %br
-      pykih reader is constantly being updated, we will soon have the good old sharing functionality, a larger feature set and a much improved UI.
-      %br
-      %br
-      We appreciate your feedback, please write to us at rp@pykih.com and we will listen.
+    subscriptions in one simple click!   
+  %br
+  %br
+  %br
+  = link_to image_tag("g2.png"), "/auth/google_oauth2"
+.span1{style: "height: 450px;"}
+  %br
+.span6{style: "height: 450px;"}
+  = image_tag "home.png"
+  %br
+  %br
+  %br
+.span4
+  .well
+    %h3 Open source
+    We want Pykih Reader to be community owned and community developed. Want more features? Build it. 
+    = link_to "Visit our Github", "https://github.com/pykih/reader", target: "_blank"
+.span4
+  .well
+    %h3 Save your feeds
+    Easily import your Google Reader subscriptions
+.span4
+  .well
+    %h3 Manage your reading list
+    Native support for favorites & read later
+%br
