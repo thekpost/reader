@@ -2,3 +2,23 @@
   .right
     %h5 As Admin you can teleportate
     = switch_user_select
+  .left
+    %table.table.table-striped
+      %tr
+        %td Total Users
+        %td= User.count
+      %tr
+        %td Total Subscriptions
+        %td= AppKey.count
+      %tr
+        %td Total Articles
+        %td= FeedEntry.count
+      %tr
+        %td Total History
+        %td= FeedEntry.where("feed_entries.last_clicked_on is not null").count
+      %tr
+        %td Total Star
+        %td= FeedEntry.where("feed_entries.is_star = true").count
+      %tr
+        %td Total To Read
+        %td= FeedEntry.where("feed_entries.is_to_read = true").count

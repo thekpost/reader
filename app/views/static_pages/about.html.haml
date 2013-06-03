@@ -19,14 +19,24 @@
   %br
   %h2 Contributors
   %br
-  %table
-    %tr
-      %td= image_tag "/mihir.png"
-      %td &nbsp;&nbsp;&nbsp;
-      %td 
-        %h3= link_to "@mihirmodi", "http://twitter.com/mihirmodi", target: "_blank", class: "red"
-        .gray Overlooks the branding, marketing and design
-        %br
+  %h4.thin
+    %table.table.table-striped
+      %tr
+        %td Mihir Modi
+        %td= link_to "@mihirmodi", "http://twitter.com/mihirmodi", target: "_blank", class: "red"
+        %td.gray Branding, Marketing and Design
+      %tr
+        %td Arun Kumar
+        %td= link_to "GitHub:arunkumar1ly", "https://github.com/arunkumar1ly", target: "_blank", class: "red"
+        %td.gray Developer
+      %tr
+        %td Pykih Software Team
+        %td= link_to "www.pykih.com", "www.pykih.com", target: "_blank", class: "red"
+        %td.gray Developer
+    Want to contribute? Email us at 
+    = mail_to "rp@pykih.com"
+    %br
+    %br
   %br
   %br
     
