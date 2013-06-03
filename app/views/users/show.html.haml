@@ -21,7 +21,7 @@
                     %tr
                       %td
                         - if !r.favicon.blank?
-                          = image_tag r.favicon
+                          = image_tag r.favicon, size: '20x20'
                       %td &nbsp;&nbsp;
                       %td
                         - if @user.feed_entries_count('a', r.id.to_s) != 0
@@ -39,7 +39,7 @@
                 %tr
                   %td
                     - if !r.favicon.blank?
-                      = image_tag r.favicon
+                      = image_tag r.favicon, size: '20x20'
                   %td &nbsp;&nbsp;
                   %td
                     - if @user.feed_entries_count('a', r.id.to_s) != 0
