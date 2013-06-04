@@ -30,8 +30,8 @@ class FeedEntry < ActiveRecord::Base
       if updated_feed.updated?
         add_entries(feed_app, updated_feed.new_entries)
       end
-    end
-    feed_app.update_attributes(is_pending: "done", last_processed: Time.now, rss_last_modified_at: updated_feed.last_modified)
+      feed_app.update_attributes(is_pending: "done", last_processed: Time.now, rss_last_modified_at: updated_feed.last_modified)
+    end    
   end
     
   def self.add_entries(u, entries)
