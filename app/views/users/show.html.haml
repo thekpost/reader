@@ -50,6 +50,7 @@
                       - else
                         = link_to truncate(r.entity_name, :length => 35, :omission => '...'), user_path(current_user, :akid => r.id)
 .span9.w2
+  %b Help: If you do not see your feeds, simply refresh your page.
   .well{style: "padding: 0px 10px; margin: 0px;"}
     = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
       = f.error_notification
