@@ -87,7 +87,20 @@ RedFeed::Application.configure do
     normalize_subject: true#, TODO - fix
     #sections: %w{current_user} + ExceptionNotifier::Notifier.default_sections,
   
-  config.action_mailer.delivery_method   = :postmark
-  config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARKAPP'] }
+  #config.action_mailer.delivery_method   = :postmark
+  #config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARKAPP'] }
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => "587",
+    :domain               => "www.gmail.com",
+    :user_name            => "theviri01@gmail.com",
+    :password             => "thepykih12345",
+    :authentication       => "plain",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
+  }
 
 end
