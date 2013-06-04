@@ -1,24 +1,40 @@
-- if current_user.is_admin?
-  .right
-    %h5 As Admin you can teleportate
-    = switch_user_select
-  .left
-    %table.table.table-striped
-      %tr
-        %td Total Users
-        %td= User.count
-      %tr
-        %td Total Subscriptions
-        %td= AppKey.count
-      %tr
-        %td Total Articles
-        %td= FeedEntry.count
-      %tr
-        %td Total History
-        %td= FeedEntry.where("feed_entries.last_clicked_on is not null").count
-      %tr
-        %td Total Star
-        %td= FeedEntry.where("feed_entries.is_star = true").count
-      %tr
-        %td Total To Read
-        %td= FeedEntry.where("feed_entries.is_to_read = true").count
+.span12
+  - if current_user.is_admin?
+    .right
+      %h5 As Admin you can teleportate
+      = switch_user_select
+    .left
+      %table.table.table-striped  
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Total Sign Ins
+            %th Last Sign In
+            %th Feeds
+            %th Articles
+            %th History
+            %th Starred
+            %th To Read
+        %tbody
+          %tr
+            %td Total
+            %td -
+            %td -
+            %td -
+            %td= @total_subscriptions
+            %td= @total_articles
+            %td= @total_history
+            %td= @total_star
+            %td= @total_to_read
+          - @response_obj.each do |u|
+            %tr
+              %td= u[0].name
+              %td= u[0].email
+              %td= u[0].sign_in_count
+              %td= smart_date(u[0].last_sign_in_at)
+              %td= u[1]
+              %td= u[2]
+              %td= u[3]
+              %td= u[4]
+              %td= u[5]

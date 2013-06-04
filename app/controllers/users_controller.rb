@@ -6,6 +6,16 @@ class UsersController < ApplicationController
     if !@user.is_admin?
       redirect_to user_path(current_user)
     end
+    @users = User.all
+    @total_subscriptions = AppKey.count
+    @total_articles = FeedEntry.count
+    @total_history = FeedEntry.where("feed_entries.last_clicked_on is not null").count
+    @total_star = FeedEntry.where("feed_entries.is_star = true").count
+    @total_to_read = FeedEntry.where("feed_entries.is_to_read = true").count
+    @response_obj = []
+    @users.each do |u|
+      @response_obj << [u, u.app_keys.count, u.feed_entries_count(nil, nil), u.feed_entries_count('h' , nil), u.feed_entries_count('s' , nil), u.feed_entries_count('r', nil)]
+    end
   end
   
   def show
