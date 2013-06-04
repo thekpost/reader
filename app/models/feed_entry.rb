@@ -24,8 +24,8 @@ class FeedEntry < ActiveRecord::Base
   end
   
   def self.update_from_feed(feed_app)
-    feed_url = feed_app.app_url  
-    updated_feed = Feedzirra::Feed.update(feed_url)
+    feed = Feedzirra::Feed.fetch_and_parse(feed_app.app_url)
+    updated_feed = Feedzirra::Feed.update(feed)
     if updated_feed.updated?
       add_entries(feed_app, updated_feed.new_entries)
     end
