@@ -24,7 +24,7 @@ pykih reader is still new. We need major upgrades. Check out the issues under [V
 
 ### Contributors
 
-* [@pykih](https://twitter.com/pykih) - www.pykih.com
 * [@mihirmodi](https://twitter.com/mihirmodi) - Designer, Marketing and Branding expert
 * Arun Kumar - https://github.com/arunkumar1ly
 * Ashay Rane - https://github.com/ashay
+* [@pykih](https://twitter.com/pykih) - www.pykih.com
