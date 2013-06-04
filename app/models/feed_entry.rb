@@ -24,10 +24,12 @@ class FeedEntry < ActiveRecord::Base
   end
   
   def self.update_from_feed(feed_app)
-    feed = Feedzirra::Feed.fetch_and_parse(feed_app.app_url)
+    feed = Feedzirra::Feed.fetch_and_parse(feed_app.app_url) 
     updated_feed = Feedzirra::Feed.update(feed)
-    if updated_feed.updated?
-      add_entries(feed_app, updated_feed.new_entries)
+    if !updated_feed.blank?
+      if updated_feed.updated?
+        add_entries(feed_app, updated_feed.new_entries)
+      end
     end
     feed_app.update_attributes(is_pending: "done", last_processed: Time.now, rss_last_modified_at: updated_feed.last_modified)
   end
