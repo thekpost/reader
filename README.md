@@ -21,3 +21,10 @@ pykih reader is an open source feed reader aimed at being a community owned and
 ### What needs to be coded?
 
 pykih reader is still new. We need major upgrades. Check out the issues under [Version 0.1 milestone](https://github.com/pykih/reader/issues?milestone=1&page=1&state=open). 
+
+### Contributors
+
+* @pykih - www.pykih.com
+* @mihirmodi - Designer, Marketing and Branding expert
+* Arun Kumar - https://github.com/arunkumar1ly
+* Ashay Rane - https://github.com/ashay
