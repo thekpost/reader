@@ -20,12 +20,12 @@ class AppKeysController < ApplicationController
   def destroy
     Delayed::Job.enqueue Dj3.new(params[:id])
     @app_key.update_attributes(is_pending: "to_delete")
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), flash: {notice: "Unsubscribing you."}
   end
     
   def request_fetch
-    Delayed::Job.enqueue Dj1.new(self.id, false)
-    redirect_to user_path(current_user), flash: {notice: "Pls. wait as we refresh."}
+    Delayed::Job.enqueue Dj1.new(params[:id], false)
+    redirect_to user_path(current_user), flash: {notice: "Please wait while we refresh."}
   end
   
   private

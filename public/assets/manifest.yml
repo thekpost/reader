@@ -13,8 +13,8 @@ id_card.png: id_card-7ba3cfc5d10137510876c2cda38fcc86.png
 id_card/index.png: id_card-7ba3cfc5d10137510876c2cda38fcc86.png
 logo.png: logo-ab9e1a64030746e6a1673006955b97a6.png
 logo/index.png: logo-ab9e1a64030746e6a1673006955b97a6.png
-mark_read.png: mark_read-a60c806b570c6bf30238aeae0a628bf9.png
-mark_read/index.png: mark_read-a60c806b570c6bf30238aeae0a628bf9.png
+mark_read.png: mark_read-10a4d559f2e2ab0cbc6a6984dd1ebec4.png
+mark_read/index.png: mark_read-10a4d559f2e2ab0cbc6a6984dd1ebec4.png
 mark_to_read.png: mark_to_read-13edf9500322365d4623605bcea96f1d.png
 mark_to_read/index.png: mark_to_read-13edf9500322365d4623605bcea96f1d.png
 signup.png: signup-fb719b21579a9deabdecce94bd4941b3.png
@@ -27,8 +27,8 @@ top.png: top-95f410047392b3497e8cdbd05e1fbc6d.png
 top/index.png: top-95f410047392b3497e8cdbd05e1fbc6d.png
 application.js: application-fda86a98d3a59518557ce782718e3f9d.js
 application/index.js: application-fda86a98d3a59518557ce782718e3f9d.js
-application.css: application-e16c2ad9d5fbeeb51c15bcfb7a62f0fe.css
-application/index.css: application-e16c2ad9d5fbeeb51c15bcfb7a62f0fe.css
+application.css: application-6446cf508425c72b80632be8ac30f242.css
+application/index.css: application-6446cf508425c72b80632be8ac30f242.css
 jquery.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 jquery/index.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
 fontawesome-webfont.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
