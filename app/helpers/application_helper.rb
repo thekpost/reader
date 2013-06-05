@@ -13,7 +13,11 @@ module ApplicationHelper
   end
   
   def feed_title(f)
-    i = 110 - (7 + f.app_key.entity_name.length)
+    if f.app_key.entity_name.blank?
+      i = 110 - (7)
+    else
+      i = 110 - (7 + f.app_key.entity_name.length)
+    end
     str = "&nbsp;&nbsp; <span class='f11 gray'>#{f.app_key.entity_name}</span> &nbsp;&nbsp;&nbsp;"
     if f.is_read
       if i < f.name.length
