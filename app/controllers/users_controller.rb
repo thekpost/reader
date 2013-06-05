@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if !@user.is_admin?
       redirect_to user_path(current_user)
     end
-    @delayedjobs = DelayedJob.all
+    @delayedjobs = DelayedJob.all.page(params[:page]).per(50)
   end
   
   def show

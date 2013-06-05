@@ -5,6 +5,7 @@
       %h5 As Admin you can teleportate
       = switch_user_select
     .left
+      = paginate @delayedjobs
       %table.table.table-striped
         %thead
           %tr
@@ -31,5 +32,6 @@
               %td
                 - if !d.last_error.blank?
                   = d.last_error.to_s[0..600]
+      = paginate @delayedjobs
             
           
