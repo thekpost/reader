@@ -28,6 +28,8 @@
               %td
                 - if !d.user.blank?
                   = d.user.name
-              %td= d.last_error[0..300]
+              %td
+                - if !d.last_error.blank?
+                  = d.last_error.to_s[0..300]
             
           
