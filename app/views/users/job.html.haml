@@ -1,0 +1,33 @@
+.span12
+  %h3 Background Jobs Monitoring
+  - if current_user.is_admin?
+    .right
+      %h5 As Admin you can teleportate
+      = switch_user_select
+    .left
+      %table.table.table-striped
+        %thead
+          %tr
+            %th ID
+            %th Status
+            %th Func
+            %th Feed
+            %th User
+            %th Latest Error
+        %tbody
+          - @delayedjobs.each do |d|
+            %tr
+              %td= d.id
+              %td= d.status.html_safe
+              %td
+                %b= d.func
+                %span.f11.gray= d.handler.gsub("--- !ruby/struct:", "")
+              %td
+                - if !d.app_key.blank?
+                  = d.app_key.entity_name
+              %td
+                - if !d.user.blank?
+                  = d.user.name
+              %td= d.last_error
+            
+          

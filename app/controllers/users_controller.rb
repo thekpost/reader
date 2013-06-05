@@ -18,6 +18,13 @@ class UsersController < ApplicationController
     end
   end
   
+  def job
+    if !@user.is_admin?
+      redirect_to user_path(current_user)
+    end
+    @delayedjobs = DelayedJob.all
+  end
+  
   def show
     @tags = @user.tags
     @without_tags = AppKey.without_tags(@user)

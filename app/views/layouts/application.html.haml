@@ -29,6 +29,9 @@
           - if !current_user.blank?
             - if current_user.is_admin?
               = link_to "Admin", admin_user_path(current_user)
+              &nbsp;&nbsp;
+              = link_to "Jobs", job_user_path(current_user)
+              &nbsp;&nbsp;
             = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
           - else
             %ul.nav.nav-pills

@@ -1,9 +1,9 @@
-class Dj3 < Struct.new(:fhub)
+class Dj3 < Struct.new(:akid)
   
   #DELETE
   
   def perform
-    app_key = AppKey.find(fhub)
+    app_key = AppKey.find(akid)
     if !app_key.blank?
       app_key.destroy
     end
