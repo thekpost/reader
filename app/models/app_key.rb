@@ -78,12 +78,8 @@ class AppKey < ActiveRecord::Base
   private
   
   def no_duplicate_accounts_please
-    app_keys = AppKey.where(app_url: self.app_url, user_id: self.user_id)
-    if !app_keys.first.blank?
-      app_keys.each do |a|
-        errors.add(:app_url, "duplicate RSS url")
-      end
-    end
+    a = AppKey.where(app_url: self.app_url, user_id: self.user_id).first
+    errors.add(:app_url, "duplicate RSS url") if !a.blank?
     true
   end  
     

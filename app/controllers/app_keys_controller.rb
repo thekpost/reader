@@ -13,6 +13,11 @@ class AppKeysController < ApplicationController
       @tags = @user.tags
       @without_tags = AppKey.without_tags(@user)
       @feed_entries = FeedEntry.read.by_user(@user).page(params[:page]).per(50)
+      @rss_appkeys = @user.app_keys
+      @total_subscriptions = @user.feed_entries_count(nil, nil)
+      @total_history = @user.feed_entries_count('h' , nil)
+      @total_star = @user.feed_entries_count('s' , nil)
+      @total_to_read = @user.feed_entries_count('r', nil)
       render "users/show", flash: {error: t("creation.failure")}
     end
   end
