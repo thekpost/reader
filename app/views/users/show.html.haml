@@ -101,7 +101,8 @@
                       = feed_title(f).html_safe
                   .comment-body{id: f.id}
                     - if !(@feed_article.blank? or (f.id != @feed_article.id and !@feed_article.blank?))
-                      %h3= link_to f.name, user_feed_entry_path(current_user, f), target: "_blank", class: "red"
+                      - if !f.name.blank?
+                        %h3= link_to f.name, user_feed_entry_path(current_user, f), target: "_blank", class: "red"
                       - if f.id == @feed_article.id
                         - if !@feed_article.content.blank?
                           %br
