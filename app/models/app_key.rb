@@ -15,6 +15,7 @@ class AppKey < ActiveRecord::Base
   validates :user_id,         :presence => true  
   validate  :no_duplicate_accounts_please, :on => :create
   validates :app_url, :format => URI::regexp(%w(http https)), :presence => true
+  validate  :no_duplicate_accounts_please
   
   #CALLBACKS
   before_create :before_create_set
