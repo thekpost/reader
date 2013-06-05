@@ -16,17 +16,17 @@ module ApplicationHelper
     if f.app_key.entity_name.blank?
       i = 110 - (7)
     else
-      i = 110 - (7 + f.app_key.entity_name.length)
+      i = 110 - (7 + f.app_key.entity_name.to_s.length)
     end
     str = "&nbsp;&nbsp; <span class='f11 gray'>#{f.app_key.entity_name}</span> &nbsp;&nbsp;&nbsp;"
     if f.is_read
-      if i < f.name.length
+      if i < f.name.to_s.length
         str = str + "<span class='black'>#{f.name[0..i]}...</span>"
       else
         str = str + "<span class='black'>#{f.name[0..i]}</span>"
       end
     else
-      if i < f.name.length
+      if i < f.name.to_s.length
         str = str + "<span class='black' style='font-weight: bold;'>#{f.name[0..i]}...</span>"
       else
         str = str + "<span class='black' style='font-weight: bold;'>#{f.name[0..i]}</span>"
