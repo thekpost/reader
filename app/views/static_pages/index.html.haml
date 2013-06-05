@@ -11,13 +11,14 @@
   %br
   %br
   = link_to image_tag("g2.png"), "/auth/google_oauth2"
+  %br
 .span1{style: "height: 450px;"}
   %br
 .span6{style: "height: 450px;"}
+  %h3.red
+    = number_to_human(FeedEntry.count)
+    = "articles delivered since launch (#{(Time.now.to_date - Date.new(2013, 6, 3)).to_i.to_s} days ago)"
   = image_tag "home.png"
-  %br
-  %br
-  %br
 .span4
   .well
     %h3 Open source
