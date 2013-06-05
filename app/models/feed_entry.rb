@@ -15,29 +15,25 @@ class FeedEntry < ActiveRecord::Base
   #CALLBACKS
   #SCOPES
   default_scope order: 'feed_entries.published_at DESC'
+  scope :read,    where("last_clicked_on is not null")
+  scope :to_read, where(is_to_read: true)
+  scope :star,    where(is_star: true)
   
   #CUSTOM SCOPES  
+  def self.by_user(u)
+    where("app_key_id IN (?)", u.app_key_ids)
+  end
+  
   #OTHER METHODS
   
   def is_read
     self.last_clicked_on.blank? ? false : true
   end
   
-  def self.update_from_feed(feed_app)
-    feed = Feedzirra::Feed.fetch_and_parse(feed_app.app_url) 
-    updated_feed = Feedzirra::Feed.update(feed)
-    if !updated_feed.blank?
-      if updated_feed.updated?
-        add_entries(feed_app, updated_feed.new_entries)
-      end
-      feed_app.update_attributes(is_pending: "done", last_processed: Time.now, rss_last_modified_at: updated_feed.last_modified)
-    end    
-  end
-    
-  def self.add_entries(u, entries)
+  def self.add_entries(ak, entries)
     entries.each do |entry|
       unless exists? guid: entry.id
-        u.feed_entries.create!(
+        ak.feed_entries.create!(
           name: entry.title,
           summary: entry.summary,
           content: entry.content,

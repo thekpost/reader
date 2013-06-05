@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 # Servers and Environment
 gem 'rails', '3.2.13'
+gem 'home_run', :require=>'date'
 gem 'pg', '0.13.2'
 gem 'unicorn'
 gem 'safai', '0.0.28', git: "https://github.com/RitvvijParrikh/safai.git"
@@ -17,7 +18,7 @@ gem 'roo'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'twitter-bootstrap-rails', '2.1.1'
+  gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'money', '5.1.0'

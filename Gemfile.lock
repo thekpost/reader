@@ -143,6 +143,7 @@ GEM
       railties (>= 3.1, < 4.1)
     hashie (1.2.0)
     hike (1.2.2)
+    home_run (1.0.9)
     htmlentities (4.3.1)
     http_parser.rb (0.5.3)
     httpauth (0.2.0)
@@ -313,6 +314,7 @@ DEPENDENCIES
   friendly_id
   g_ruby (= 0.0.6)
   haml-rails
+  home_run
   jquery-rails
   kaminari
   mail
@@ -332,6 +334,6 @@ DEPENDENCIES
   sentient_user!
   simple_form
   switch_user
-  twitter-bootstrap-rails (= 2.1.1)
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn

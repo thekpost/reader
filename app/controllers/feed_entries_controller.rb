@@ -2,6 +2,7 @@ class FeedEntriesController < ApplicationController
   
   before_filter :authenticate_user!, :allowed?
   
+  
   def update
     if !params[:is_star].blank?
       @feed_article.update_attributes(is_star: params[:is_star])
@@ -19,10 +20,6 @@ class FeedEntriesController < ApplicationController
   private
   
   def allowed?
-    @user = current_user
-    if @user.id != current_user.id
-      redirect_to root_url, flash: {error: t("permission.denied")}
-    end
     @feed_article = FeedEntry.find(params[:id])
   end
   

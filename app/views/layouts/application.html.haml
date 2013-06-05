@@ -12,7 +12,7 @@
   %body.all
     .container
       .row
-        .span12.f11
+        .span12.f11.right
           This is a community owned, 
           = link_to "open-source", "https://github.com/pykih/reader", target: "_blank", style: "color: blue;"
           project. To contribute, 
@@ -27,6 +27,8 @@
           %br
         .span3.right
           - if !current_user.blank?
+            - if current_user.is_admin?
+              = link_to "Admin", admin_user_path(current_user)
             = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
           - else
             %ul.nav.nav-pills

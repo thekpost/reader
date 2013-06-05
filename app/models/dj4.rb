@@ -12,7 +12,4 @@ class Dj4 < Struct.new(:uid)
     AppKey.import(user, a_json)
   end
   
-  #PRIVATE
-  private
-  
 end

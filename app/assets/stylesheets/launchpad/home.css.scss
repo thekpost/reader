@@ -25,3 +25,13 @@
 }
 
 .main-tag{color:  rgb(0, 0, 0); display: block; font-family: helvetica, arial, sans-serif; font-size: 41px; font-weight: bold; letter-spacing: -2px; line-height: 41px; margin: 0px; padding: 0px;}
+
+ul.feed{list-style: none;margin: 0px;padding-left: 0px;
+
+li{list-style-type: none;margin: 0px;padding: 0px ;border-bottom: 1px solid #dddddd;-webkit-border-radius: 3px;-moz-border-radius: 3px; background-color: white;}
+
+li.active{background-color: #F2F2F2;}
+	
+}
+
+ul.sidebar{li:hover{background-color: #EAEAEA; padding: 0px; margin: 0px;}}

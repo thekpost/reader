@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
   
-  devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable#, :omniauthable
+  devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
   include SentientUser
   
   #ACCESSORS
@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   
   #CALLBACKS
   before_create :before_create_set
-  after_create  :after_create_set
   
   #SCOPES  
   #OTHER METHODS
@@ -50,19 +49,23 @@ class User < ActiveRecord::Base
     (email == "rp@pykih.com" or email == "ritvij.j@gmail.com" or email == "modimihir@gmail.com") ? true : false
   end
   
-  def feed_entries_count(g, akid)
-    if g == "h"
-      return FeedEntry.where("app_key_id IN (?) and feed_entries.last_clicked_on is not null", self.app_keys.pluck("app_keys.id")).count.to_s
-    elsif g == "r"
-      return FeedEntry.where("app_key_id IN (?) and feed_entries.is_to_read = true", self.app_keys.pluck("app_keys.id")).count.to_s
-    elsif g == "s"
-      return FeedEntry.where("app_key_id IN (?) and feed_entries.is_star = true", self.app_keys.pluck("app_keys.id")).count.to_s
-    elsif g == "a"
-      return FeedEntry.where("app_key_id IN (?)", self.app_keys.pluck("app_keys.id")).where("feed_entries.app_key_id = ?", akid).count.to_s
-    else
-      return FeedEntry.where("app_key_id IN (?)", self.app_keys.pluck("app_keys.id")).count.to_s
-    end
+  def app_key_ids
+    self.app_keys.pluck("app_keys.id")
   end
+  
+  def feed_entries_count(g, akid)
+     if g == "h"
+       return FeedEntry.read.by_user(self).count.to_s
+     elsif g == "r"
+       return FeedEntry.to_read.by_user(self).count.to_s
+     elsif g == "s"
+       return FeedEntry.star.by_user(self).count.to_s
+     elsif g == "a"
+       return FeedEntry.where("feed_entries.app_key_id = ?", akid).count.to_s
+     else
+       return FeedEntry.by_user(self).count.to_s
+     end
+   end
 
   #JOBS
   #PRIVATE
@@ -70,10 +73,6 @@ class User < ActiveRecord::Base
   
   def before_create_set
     self.authentication_token = SecureRandom.hex
-    true
-  end
-  
-  def after_create_set
     true
   end
   

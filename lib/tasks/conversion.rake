@@ -1,6 +1,10 @@
 namespace :conversion do
   
   task :do => :environment do |t, args|
+    
+  end
+  
+  task :fav => :environment do |t, args|
     AppKey.all.each do |a|
       flag = false
       if !a.fav.blank?

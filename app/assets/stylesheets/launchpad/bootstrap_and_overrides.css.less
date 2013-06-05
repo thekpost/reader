@@ -3,14 +3,19 @@
 @import "fontawesome";
 
 // Set the correct sprite paths
-@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
-@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-@fontAwesomeEotPath: "/assets/fontawesome-webfont.eot";
-@fontAwesomeWoffPath: "/assets/fontawesome-webfont.woff";
-@fontAwesomeTtfPath: "/assets/fontawesome-webfont.ttf";
-@fontAwesomeSvgPath: "/assets/fontawesome-webfont.svg";
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
+@fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
+@fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
+@fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+
+// Font Awesome
+@import "fontawesome";
 
 // customizations via bootstrap variables
 @navbarBackground: #EDEDED;

@@ -16,7 +16,7 @@ class Authentication < ActiveRecord::Base
   def reauthenticate_google?
     if Time.now - self.expires_at > 0
       j = GRuby::Auth.refresh(self.refresh_token)
-      self.update_attributes(token: j["access_token"], expires_at: Time.now + j["expires_in"], error_message: nil)
+      self.update_attributes(token: j["access_token"], expires_at: Time.now + j["expires_in"])
     end
     true
   end

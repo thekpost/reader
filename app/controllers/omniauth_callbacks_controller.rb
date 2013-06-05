@@ -21,15 +21,15 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_and_redirect user
     
     if flag_existing_user
-      Delayed::Job.enqueue Dj5.new(user.id)
+      user.app_keys.each do |ak|
+        Delayed::Job.enqueue Dj1.new(ak.id, false)
+      end
     else
       Delayed::Job.enqueue Dj4.new(user.id)
     end 
   end
 
   alias_method :facebook, :all
-  alias_method :linkedin, :all
-  alias_method :twitter, :all
   alias_method :google_oauth2, :all
   
 end

@@ -11,6 +11,33 @@ module ApplicationHelper
       return d
     end
   end
+  
+  def feed_title(f)
+    i = 110 - (7 + f.app_key.entity_name.length)
+    str = "&nbsp;&nbsp; <span class='f11 gray'>#{f.app_key.entity_name}</span> &nbsp;&nbsp;&nbsp;"
+    if f.is_read
+      if i < f.name.length
+        str = str + "<span class='black'>#{f.name[0..i]}...</span>"
+      else
+        str = str + "<span class='black'>#{f.name[0..i]}</span>"
+      end
+    else
+      if i < f.name.length
+        str = str + "<span class='black' style='font-weight: bold;'>#{f.name[0..i]}...</span>"
+      else
+        str = str + "<span class='black' style='font-weight: bold;'>#{f.name[0..i]}</span>"
+      end
+    end
+    return str.html_safe
+  end  
+  
+  def sd(i)
+    if i.blank?
+      return "" 
+    else
+      return i.strftime("%d-%b-%Y")
+    end
+  end
     
   def title(page_title)
     content_for(:title) { page_title }

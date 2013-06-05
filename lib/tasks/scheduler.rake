@@ -12,7 +12,9 @@ end
 # DAILY JOBS - SEQUENCED
 task :every_day => :environment do
   begin
-    Delayed::Job.enqueue Dj2.new(1)
+    AppKey.all.each do |ak|
+      Delayed::Job.enqueue Dj1.new(ak.id, false)
+    end
   rescue Exception => e
     $stderr.puts "[JOB_ERROR] every_day " + e.to_s
     #ExceptionNotifier::Notifier.background_exception_notification(e)
