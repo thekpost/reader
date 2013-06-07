@@ -15,7 +15,7 @@ module ApplicationHelper
   def feed_name(u, r)
     c = u.feed_entries_count('a', r.id.to_s).to_s
     if c.to_i != 0
-      return truncate(r.entity_name, :length => 25, :omission => '..') + " <span style='color: gray;'>(#{c})</span>".html_safe
+      return truncate(r.entity_name, :length => 25, :omission => '..').to_s + " <span style='color: gray;'>(#{c})</span>".html_safe
     else
       return truncate(r.entity_name, :length => 25, :omission => '..')
     end
