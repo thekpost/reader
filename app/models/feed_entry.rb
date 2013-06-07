@@ -6,7 +6,7 @@ class FeedEntry < ActiveRecord::Base
 
   #GEMS USED
   #ACCESSORS
-  attr_accessible :app_key_id, :guid, :is_star, :is_to_read, :last_clicked_on, :name, :published_at, :summary, :url, :user_id, :categories, :author, :content
+  attr_accessible :app_key_id, :guid, :is_star, :is_to_read, :last_clicked_on, :name, :published_at, :summary, :url, :user_id, :categories, :author, :content, :last_starred_at, :current_star
   
   #ASSOCIATIONS
   belongs_to :app_key

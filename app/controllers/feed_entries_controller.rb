@@ -5,9 +5,14 @@ class FeedEntriesController < ApplicationController
   def update_star
     if @feed_article.present?
       current_star_index = FeedEntry::STARS.index(@feed_article.current_star)
-      new_star_index = (current_star_index + 1) % 13 # We have total 13 star images
-      @feed_article.update_attribute(:current_star, FeedEntry::STARS[new_star_index])
-      @feed_article.update_attribute(:is_star, new_star_index != 0)
+      if @feed_article.last_starred_at.blank?
+        new_star_index = (current_star_index + 1) % 13 # We have total 13 star images
+      elsif (Time.now - @feed_article.last_starred_at).to_i > 5 
+        new_star_index = 0
+      else 
+        new_star_index = (current_star_index + 1) % 13 # We have total 13 star images
+      end
+      @feed_article.update_attributes(current_star: FeedEntry::STARS[new_star_index], last_starred_at: Time.now, is_star: (new_star_index != 0))
     end
   end
 

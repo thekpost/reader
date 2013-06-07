@@ -32,6 +32,8 @@
               &nbsp;&nbsp;
               = link_to "Jobs", job_user_path(current_user)
               &nbsp;&nbsp;
+            = link_to "Settings".html_safe, edit_user_path(current_user), style: "color: black;"
+            &nbsp;&nbsp;
             = link_to "Sign Out".html_safe, sign_out_path, style: "color: black;"
           - else
             %ul.nav.nav-pills
