@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605002801) do
+ActiveRecord::Schema.define(:version => 20130607123129) do
 
   create_table "app_keys", :force => true do |t|
     t.integer  "user_id"
@@ -90,11 +90,13 @@ ActiveRecord::Schema.define(:version => 20130605002801) do
     t.boolean  "is_star"
     t.boolean  "is_to_read"
     t.datetime "last_clicked_on"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.text     "categories"
     t.string   "author"
     t.text     "content"
+    t.string   "current_star",    :default => "star0"
+    t.datetime "last_starred_at"
   end
 
   create_table "tag_entries", :force => true do |t|

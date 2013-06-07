@@ -2,7 +2,8 @@ development:
   adapter: postgresql
   encoding: unicode
   database: red_feed_development
-  username: developer
+  host: 127.0.0.1
+  username: ritvvijparrikh
   password:
   port: 5432
 
