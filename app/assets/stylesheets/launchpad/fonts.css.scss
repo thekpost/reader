@@ -1,0 +1,55 @@
+a.black{color: gray; text-decoration: none;}
+.striked{color: gray;  font-size: 9px; a{color: gray; }}
+
+#search_box {margin-top: 5px;}
+
+a.orange{color: #CA2F00;}
+h3.orange{color: #CA2F00;}
+
+.ruler{border-bottom: 1px lightgray solid; margin-bottom: 5px; }
+.big_ruler{border-top: 6px lightgray solid; margin-bottom: 5px;}
+.padtop{margin-top: 20px; }
+.m0p0{margin: 0px; padding: 0px;}
+
+.ticket_closed{color: #223300;}
+.ticket_open{color: #B5201E;}
+
+.footer{width: 100%;bottom: 0px; display: block; position: absolute; left: 0px; margin: 0px; padding: 10px 0px; background-color: #DEDCD6; text-align: center; font-size: 12px; color: black;}
+
+.postit{background-clip: border-box; background-color: rgb(255, 255, 204); display: inline-block; font-size: 12px; line-height: 16px; padding: 10px 15px;}
+
+.legend{color: black; font-weight: bold;height: 15px;line-height: 15px;margin: 0px;padding: 7px 7px 30px 160px;}
+.legend-nopad{color: black; font-weight: bold;height: 15px;line-height: 15px;margin: 0px;padding: 7px 7px 30px 0px;}
+
+h4.lg{color: black; background-color: #EEF4F8; padding: 5px; font-weight: bold; margin: 12px 0px; font-size: 12px;}
+h4.lg2{color: black; background-color: #DEDCD6; padding: 5px; font-weight: bold; margin: 12px 0px; font-size: 12px;}
+
+h4.sidenote{color: black; border: 1px solid lightgray; background-color: #DEDCD6; padding: 5px; font-weight: 400; margin: 12px 0px; font-size: 11px;}
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+.feature_title{margin: 9px 0px; line-height: 2em; font-size: 14px; font-weight: bold;}
+.feature_explain{font-family: georgia; line-height: 1.1em; font-size: 12px;}
+
+.pad10{ padding: 10px;}
+.padl10{ padding-left: 10px;}
+.pad15{padding: 15px;}
+.pad20{ padding: 20px;}
+.pad2010{padding: 20px 10px;}
+.bod1{border: 1px lightgray solid;}
+.pad-r50{ padding-right: 15px; }
+.pad-l15{ padding-left: 15px; }
+.pad-left160{ padding-left: 160px; }
+.pad20_10_0_10{padding: 20px 10px 0px 10px;}
+
+.w160{ width: 160px; }
+
+th .asc{background-image: url(asset-url('up_arrow.gif', image)) no-repeat right center red;padding-right: 12px;}
+
+th .desc{background-image: url(asset-url('down_arrow.gif', image)) no-repeat right center red;padding-right: 12px;}

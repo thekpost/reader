@@ -1,0 +1,341 @@
+GIT
+  remote: git://github.com/alanjds/exception_notification.git
+  revision: 048fc6be972189e62ca3b9453d19233ec5773016
+  specs:
+    exception_notification (2.6.1)
+      actionmailer (>= 3.0.4)
+      tinder (~> 1.8)
+
+GIT
+  remote: git://github.com/bokmann/sentient_user.git
+  revision: 9247fb18cd00294a45811e19bb72cf1c1a04d5d1
+  specs:
+    sentient_user (0.3.3.rc1)
+      railties (>= 3.1)
+
+GIT
+  remote: git://github.com/jim/carmen-rails.git
+  revision: 554ddf6f38a10f608748d400f4b5bf908983cd4a
+  specs:
+    carmen-rails (1.0.0)
+      carmen (~> 1.0.0)
+      rails
+
+GIT
+  remote: git://github.com/jim/carmen.git
+  revision: 711e323271862577a96b4885975ead5f1df19796
+  specs:
+    carmen (1.0.0)
+      unicode_utils (~> 1.4.0)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: fdd47d74dbf26c25873ccad24010a0b21d141cfa
+  specs:
+    devise (3.0.0.rc)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.1)
+
+GIT
+  remote: git://github.com/randym/acts_as_xlsx.git
+  revision: 919817e590b1cf8e27632e630469603c78a50402
+  specs:
+    acts_as_xlsx (1.0.6)
+      activerecord (>= 2.3.9)
+      axlsx (>= 1.0.13)
+      i18n (>= 0.4.1)
+
+GIT
+  remote: git://github.com/randym/axlsx.git
+  revision: 7caf2ea9dfe92fa418f40132ea3c94d3da109f2c
+  specs:
+    axlsx (1.3.7)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (>= 0.9.5)
+
+GIT
+  remote: git://github.com/zquestz/omniauth-google-oauth2.git
+  revision: 54c5bf224382b0dcd560fa1999753e4adf2b468d
+  specs:
+    omniauth-google-oauth2 (0.1.17)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+
+GIT
+  remote: https://github.com/RitvvijParrikh/safai.git
+  revision: 3590eb596b7dec058d13ef319775dd4e1b6d2153
+  specs:
+    safai (0.0.28)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionmailer (3.2.13)
+      actionpack (= 3.2.13)
+      mail (~> 2.5.3)
+    actionpack (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.5)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+    activerecord (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    arel (3.0.2)
+    awesome_print (1.1.0)
+    bcrypt-ruby (3.0.1)
+    builder (3.0.4)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.2)
+    commonjs (0.2.6)
+    curb (0.8.4)
+    delayed_job (3.0.5)
+      activesupport (~> 3.0)
+    delayed_job_active_record (0.3.3)
+      activerecord (>= 2.1.0, < 4)
+      delayed_job (~> 3.0)
+    erubis (2.7.0)
+    eventmachine (1.0.3)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    feedzirra (0.0.24)
+      activesupport (>= 2.3.8)
+      builder (>= 2.1.2)
+      curb (>= 0.2.3)
+      loofah (>= 0.3.1)
+      nokogiri (> 0.0.0)
+      sax-machine (>= 0.0.12)
+    friendly_id (4.0.9)
+    g_ruby (0.0.6)
+    haml (4.0.3)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
+    hashie (1.2.0)
+    hike (1.2.2)
+    home_run (1.0.9)
+    htmlentities (4.3.1)
+    http_parser.rb (0.5.3)
+    httpauth (0.2.0)
+    i18n (0.6.1)
+    journey (1.0.4)
+    jquery-rails (3.0.0)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    json (1.8.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kgio (2.8.0)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.6)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
+    libv8 (3.3.10.4)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    meta_search (1.1.3)
+      actionpack (~> 3.1)
+      activerecord (~> 3.1)
+      activesupport (~> 3.1)
+      polyamorous (~> 0.5.0)
+    mime-types (1.23)
+    money (5.1.0)
+      i18n (~> 0.6.0)
+    money-rails (0.8.1)
+      activesupport (>= 3.0)
+      money (~> 5.1.0)
+      railties (>= 3.0)
+    multi_json (1.7.5)
+    multipart-post (1.2.0)
+    nestful (1.0.4)
+    nokogiri (1.5.3)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
+    pg (0.13.2)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
+    polyglot (0.3.3)
+    postmark (1.0.0)
+      json
+      rake
+    postmark-rails (0.5.0)
+      actionmailer
+      postmark (~> 1.0)
+    rack (1.4.5)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-ssl (1.3.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (3.2.13)
+      actionmailer (= 3.2.13)
+      actionpack (= 3.2.13)
+      activerecord (= 3.2.13)
+      activeresource (= 3.2.13)
+      activesupport (= 3.2.13)
+      bundler (~> 1.0)
+      railties (= 3.2.13)
+    railties (3.2.13)
+      actionpack (= 3.2.13)
+      activesupport (= 3.2.13)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
+    raindrops (0.11.0)
+    rake (10.0.4)
+    rdoc (3.12.2)
+      json (~> 1.4)
+    roo (1.11.2)
+      nokogiri
+      rubyzip
+      spreadsheet (> 0.6.4)
+    ruby-ole (1.2.11.6)
+    rubyzip (0.9.9)
+    sass (3.2.9)
+    sass-rails (3.2.6)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
+    sax-machine (0.1.0)
+      nokogiri (> 0.0.0)
+    simple_form (2.1.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+    simple_oauth (0.1.9)
+    spreadsheet (0.8.5)
+      ruby-ole (>= 1.0)
+    sprockets (2.2.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    switch_user (0.9.3)
+    therubyracer (0.10.1)
+      libv8 (~> 3.3.10)
+    thor (0.18.1)
+    tilt (1.4.1)
+    tinder (1.9.1)
+      eventmachine (>= 0.12.0, < 2)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.8)
+      hashie (~> 1.0)
+      json (~> 1.6)
+      mime-types (~> 1.16)
+      multi_json (~> 1.0)
+      multipart-post (~> 1.1)
+      twitter-stream (~> 0.1)
+    treetop (1.4.12)
+      polyglot
+      polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.1.1)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.2)
+      railties (>= 3.1)
+      therubyracer (= 0.10.1)
+    twitter-stream (0.1.16)
+      eventmachine (>= 0.12.8)
+      http_parser.rb (~> 0.5.1)
+      simple_oauth (~> 0.1.4)
+    tzinfo (0.3.37)
+    uglifier (2.1.1)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
+    unicode_utils (1.4.0)
+    unicorn (4.6.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+    warden (1.2.1)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  acts_as_xlsx!
+  awesome_print
+  axlsx!
+  carmen!
+  carmen-rails!
+  coffee-rails (~> 3.2.1)
+  delayed_job_active_record (= 0.3.3)
+  devise!
+  exception_notification!
+  feedzirra
+  friendly_id
+  g_ruby (= 0.0.6)
+  haml-rails
+  home_run
+  jquery-rails
+  kaminari
+  mail
+  meta_search
+  money (= 5.1.0)
+  money-rails
+  nestful
+  nokogiri (= 1.5.3)
+  omniauth
+  omniauth-google-oauth2!
+  pg (= 0.13.2)
+  postmark-rails
+  rails (= 3.2.13)
+  roo
+  safai (= 0.0.28)!
+  sass-rails (~> 3.2.3)
+  sentient_user!
+  simple_form
+  switch_user
+  twitter-bootstrap-rails
+  uglifier (>= 1.0.3)
+  unicorn

@@ -1,0 +1,3 @@
+$('li#<%= @feed_article.id %> a#starred_image_link_<%= @feed_article.id %>').html('<%= link_to image_tag("stars/#{@feed_article.current_star}.png"), update_star_user_feed_entries_path(:id => @feed_article.id) , method: :put, remote: true %>');
+
+$('ul#feed_status li#starred_feeds').html('<%= link_to "Stared (#{current_user.feed_entries_count('s' , nil)})", user_path(current_user, :s => true) %>');

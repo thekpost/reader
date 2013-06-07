@@ -1,0 +1,2 @@
+%ul.nav.nav-tabs.nav-stacked
+  %li{class: (controller_name == 'users' and action_name == 'edit') ? "active" : nil}= link_to "Edit Account", edit_user_path(current_user)

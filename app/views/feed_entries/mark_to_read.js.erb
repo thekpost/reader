@@ -1,0 +1,5 @@
+<% image = (@feed_article.is_to_read ? "mark_read.png" : "mark_to_read.png" ) %>
+
+$('li#<%= @feed_article.id %> a#mark_read_link_<%= @feed_article.id %>').html('<%= link_to image_tag("#{image}"), mark_to_read_user_feed_entries_path(current_user, :id => @feed_article.id, is_to_read: !@feed_article.is_to_read), method: :put, id: "mark_read_link_#{@feed_article.id}", remote: true %>');
+
+$('ul#feed_status li#marked_to_read_feeds').html('<%= link_to "To Read (#{current_user.feed_entries_count("r" , nil)})", user_path(current_user, :r => true) %>');

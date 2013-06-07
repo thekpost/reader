@@ -1,0 +1,124 @@
+.span3{style: "height: 600px; overflow-y: scroll; "}
+  = link_to "Subscribe", "#myModal1", :role => "button", "data-toggle"=>"modal", class: "btn btn-danger"
+  %br
+  %br
+  %ul.nav.nav-tabs.nav-stacked{id: "feed_status", style: "padding: 0px; margin: 0px;"}
+    %li{class: @home.blank? ? nil : "active"}
+      = link_to "All Feeds (#{@total_subscriptions})", user_path(current_user)
+    %li{id: "marked_to_read_feeds", class: @to_read.blank? ? nil : "active"}
+      = link_to "To Read (#{@total_to_read})", user_path(current_user, :r => true)
+    %li{id: "starred_feeds", class: @is_star.blank? ? nil : "active"}
+      = link_to "Stared (#{@total_star})", user_path(current_user, :s => true)
+    %li{class: @history.blank? ? nil : "active"}
+      = link_to "Read (#{@total_history})", user_path(current_user, :h => true)
+  - if !@tags.first.blank?
+    - @tags.each do |t|
+      - apps = t.tag_entries
+      - if !apps.blank?
+        - if !apps.first.blank?
+          %br
+          %b= t.name
+          %ul.nav.nav-tabs.nav-stacked.sidebar
+            - apps.each do |rr|
+              - r = rr.app_key
+              - if !r.blank?
+                %li{class: @akid == r.id.to_s ? "active" : nil}
+                  %table
+                    %tr
+                      %td.span1
+                        .dropdown
+                          %a{class: "dropdown-toggle", id: "dLabel#{r.id}", "data-toggle"=>"dropdown", href: "#"} 
+                            %b.caret
+                          %ul{class: "dropdown-menu", role: "menu", "aria-labelledby"=>"dLabel#{r.id}"}
+                            %li= link_to "Refresh", request_fetch_user_app_key_path(current_user, r), style: "font-size: 12px; padding: 2px 5px;"
+                            %li= link_to "Unsubscribe",  user_app_key_path(current_user, r), :method => :delete, :data => { :confirm => t("delete.c") }, style: "font-size: 12px; padding: 2px 5px;"
+                      %td.span2
+                        %a{href: user_path(current_user, :akid => r.id), style: "padding: 0px; margin: 0px;"}
+                          - if !r.favicon.blank? and r.favicon != ""
+                            = image_tag r.favicon, size: '15x15'
+                          - else
+                            = image_tag "http://reader.pykih.com/favicon.ico", size: '15x15'
+                      %td &nbsp;&nbsp;
+                      %td.span9.black
+                        %a{href: user_path(current_user, :akid => r.id), style: "padding: 0px; margin: 0px;"}= feed_name(@user, r).html_safe
+
+  - if !@without_tags.first.blank?
+    %br
+    %b Subscriptions
+    %ul.nav.nav-tabs.nav-stacked{id: "2"}
+      - @without_tags.each do |r|
+        - if !r.blank?
+          %li.f11{class: @akid == r.id.to_s ? "active" : nil}
+            %table
+              %tr
+                %td.span1
+                  .dropdown
+                    %a{class: "dropdown-toggle", id: "dLabel#{r.id}", "data-toggle"=>"dropdown", href: "#"} 
+                      %b.caret
+                    %ul{class: "dropdown-menu", role: "menu", "aria-labelledby"=>"dLabel#{r.id}"}
+                      %li= link_to "Refresh", request_fetch_user_app_key_path(current_user, r), style: "font-size: 12px; padding: 2px 5px;"
+                      %li= link_to "Unsubscribe",  user_app_key_path(current_user, r), :method => :delete, :data => { :confirm => t("delete.c") }, style: "font-size: 12px; padding: 2px 5px;"
+                %td.span2
+                  %a{href: user_path(current_user, :akid => r.id), style: "padding: 0px; margin: 0px;"}
+                    - if !r.favicon.blank? and r.favicon != ""
+                      = image_tag r.favicon, size: '15x15'
+                    - else
+                      = image_tag "http://reader.pykih.com/favicon.ico", size: '15x15'
+                %td &nbsp;&nbsp;
+                %td.span9.black
+                  %a{href: user_path(current_user, :akid => r.id), style: "padding: 0px; margin: 0px;"}= feed_name(@user, r).html_safe
+      
+.span9
+  %b.red Help: If you do not see your feeds, simply refresh your page.
+  - if @feed_entries.first.blank? 
+    .f11 No RSS entries found.
+  - else
+    %ul.feed
+      - @feed_entries.each do |f|
+        %li{style: f.is_read ? "background-color: #EAEAEA;" : "background-color: white;", id: f.id}
+          %table
+            %tr              
+              %td.span1.top
+                %table
+                  %tr
+                    %td
+                      = link_to image_tag("stars/#{f.current_star}.png"), update_star_user_feed_entries_path(current_user, :id => f.id) , method: :put, remote: true, id: "starred_image_link_#{f.id}"  
+                    %td
+                      - if f.is_to_read
+                        = link_to image_tag("mark_read.png"), mark_to_read_user_feed_entries_path(current_user, :id => f.id, is_to_read: false), method: :put, id: "mark_read_link_#{f.id}", remote: true
+                      - else
+                        = link_to image_tag("mark_to_read.png"), mark_to_read_user_feed_entries_path(current_user, :id => f.id, is_to_read: true), method: :put, id: "mark_read_link_#{f.id}", remote: true
+              %td.span10
+                #comments
+                  %a{href: user_path(current_user, entry: f, anchor: f.id)}
+                    .comment-header
+                      = feed_title(f).html_safe
+                  .comment-body{id: f.id}
+                    - if !(@feed_article.blank? or (f.id != @feed_article.id and !@feed_article.blank?))
+                      - if !f.name.blank?
+                        %h3= link_to f.name, user_feed_entry_path(current_user, f), target: "_blank", class: "red"
+                      - if f.id == @feed_article.id
+                        - if !@feed_article.content.blank?
+                          %br
+                          = @feed_article.content.html_safe
+                        - elsif !@feed_article.summary.blank?
+                          %br
+                          = @feed_article.summary.html_safe
+              %td.span2.f11.gray.right.top
+                = sd(f.published_at)
+                = link_to "<i class='icon-share-alt'></i>".html_safe, user_feed_entry_path(current_user, f), target: "_blank"
+                
+    %br
+    = paginate @feed_entries
+    
+#myModal1.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-body
+    = simple_form_for([@user, @app_key], html: {class: 'form-vertical'}) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :user_id, as: :hidden, input_html: {value: current_user.id}
+        %table
+          %tr
+            %td= f.input :app_url, label: "RSS URL", input_html: {class: "field span4", rows: 1, autocomplete: :off, style: 'height: 20px;'}
+            %td &nbsp;&nbsp;&nbsp;&nbsp;
+            %td= f.button :submit, "Add", class: "btn btn-danger"

@@ -1,0 +1,22 @@
+/* Contact Sprites */
+.contact_sprites {
+  background: asset-url('contacts.png', image) no-repeat top left;
+}
+
+.sprite-email{ background-position: 0 0; width: 17px; height: 17px; display: inline-block; }
+.sprite-facebook{ background-position: 0 -37px; width: 17px; height: 17px; display: inline-block;}
+.sprite-linkedin{ background-position: 0 -74px; width: 17px; height: 17px; display: inline-block; }
+.sprite-mobile{ background-position: 0 -111px; width: 17px; height: 17px; display: inline-block;}
+.sprite-phone1{ background-position: 0 -148px; width: 17px; height: 17px; display: inline-block;}
+.sprite-phone2{ background-position: 0 -185px; width: 16px; height: 13px; display: inline-block;}
+.sprite-skype{ background-position: 0 -218px; width: 17px; height: 17px; display: inline-block;}
+.sprite-twitter{ background-position: 0 -255px; width: 17px; height: 17px; display: inline-block;}
+.sprite-website{ background-position: 0 -292px; width: 17px; height: 17px; display: inline-block;}
+.sprite-youtube{ background-position: 0 -329px; width: 17px; height: 17px; display: inline-block;}
+
+.signup{background: asset-url('signup.png', image) no-repeat top left;}
+.fb{ background-position: 0 0; width: 64px; height: 64px; } 
+.gl{ background-position: 0 -74px; width: 64px; height: 64px; } 
+.ln{ background-position: 0 -148px; width: 64px; height: 64px; } 
+.tw{ background-position: 0 -222px; width: 64px; height: 64px; } 
+.yo{ background-position: 0 -296px; width: 64px; height: 64px; } 

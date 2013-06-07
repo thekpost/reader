@@ -1,0 +1,35 @@
+.span5{style: "height: 450px;"}
+  %br
+  %br
+  .main-tag A clean, no bullshit Google Reader replacement
+  %br
+  %h3.thin 
+    Import and save all your Google Reader 
+    %br
+    subscriptions in one simple click!   
+  %br
+  %br
+  %br
+  = link_to image_tag("g2.png"), "/auth/google_oauth2"
+  %br
+.span1{style: "height: 450px;"}
+  %br
+.span6{style: "height: 450px;"}
+  %h3.red
+    = number_to_human(FeedEntry.count)
+    = "articles delivered since launch (#{(Time.now.to_date - Date.new(2013, 6, 3)).to_i.to_s} days ago)"
+  = image_tag "home.png"
+.span4
+  .well
+    %h3 Open source
+    Community owned and community developed.
+    = link_to "Github", "https://github.com/pykih/reader", target: "_blank"
+.span4
+  .well
+    %h3 Save your feeds
+    Easily import your Google Reader subscriptions
+.span4
+  .well
+    %h3 Manage your reading list
+    Native support for favorites & read later
+%br

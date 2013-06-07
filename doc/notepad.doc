@@ -1,0 +1,111 @@
+$('#comments .comment a.quote').live('click', function(){
+    $.get($(this).attr('href'), {}, null, 'script');
+    return false;
+})
+$('form#new_comment').submit(function() {
+  $(this).addClass("loading");
+  var self = this;
+  $.post($(this).attr("action"), $(this).serialize(), function() {
+    $(self).removeClass("loading");
+  }, 'script')
+  return false;
+});
+
+$('#comments.comment.comment-header').live('click', function(){
+    $(this).closest('.comment').find('.short-message').toggle();
+    $(this).closest('.comment').find('.comment-body').toggle();
+});
+$('#comments .comment').each(function(i){
+    if ($('#comments .comment').length - i > 1) {
+        $(this).find('.short-message').show();
+        $(this).find('.comment-body').hide();
+    }
+});
+
+
+$(document).ready(function() {
+	
+	// datepicker
+	
+	return $("input.datepicker").each(function(i) {
+	    return $(this).datepicker({
+	      altFormat: "yy-mm-dd",
+	      dateFormat: "mm/dd/yy",
+	      altField: $(this).next()
+	    });
+	});
+	
+	// table sorting http://tablesorter.com/docs/
+	
+	$("#tablesorter").tablesorter(); 
+	$("#tablesorter_users").tablesorter( {sortList: [[2,0]], headers: { 0: { sorter: false}, 1: {sorter: false}, 6: {sorter: false} }}); 
+	$("#tablesorter_orders").tablesorter( {sortList: [[0,0]], headers: { 7: { sorter: false}, 8: {sorter: false}}} ); 
+	
+	// users index page
+	
+	$("#tags_box").hide();
+	$("[name=\"users[]\"]").change(function() {
+	  var count_checked;
+	  count_checked = $("[name=\"users[]\"]:checked").size();
+	  if (count_checked > 0) {
+	    return $("#tags_box").show();
+	  } else {
+	    return $("#tags_box").hide();
+	  }
+	});
+	
+	// location
+	
+	var select_wrapper, url;
+	  select_wrapper = $('#order_state_code_wrapper');
+	  url = "/util_locations/subregion_options?parent_region=IN";
+	  select_wrapper.load(url);
+	  $('select#user_country_iso2').change(function(event) {
+	    var country_iso2;
+	    select_wrapper = $('#order_state_code_wrapper');
+	    $('select', select_wrapper).attr('disabled', true);
+	    country_iso2 = $(this).val();
+	    url = "/util_locations/subregion_options?parent_region=" + country_iso2;
+	    return select_wrapper.load(url);
+	  });
+	
+	// bpm actions
+	
+	if ($("select[id=\"bpm_action_action_type\"]").val() !== "BAT_U") {
+	    $("#bpm_action_action_number2").show();
+	  } else {
+	    $("#bpm_action_action_number2").hide();
+	  }
+	  if ($("select[id=\"bpm_action_action_type\"]").val() !== "BAT_DP") {
+	    $(".add-on").hide();
+	  } else {
+	    $(".add-on").show();
+	  }
+	  if ($("select[id=\"bpm_action_action_type\"]").val() !== "BAT_IP") {
+	    $(".add-on").hide();
+	  } else {
+	    $(".add-on").show();
+	  }
+	  $("select[id=\"bpm_action_action_type\"]").change(function() {
+	    if ($(this).val() !== "BAT_U") {
+	      $("#bpm_action_action_number2").show();
+	    } else {
+	      $("#bpm_action_action_number2").hide();
+	    }
+	    if ($(this).val() !== "BAT_DP") {
+	      $(".add-on").hide();
+	    } else {
+	      $(".add-on").show();
+	    }
+	    if ($(this).val() !== "BAT_IP") {
+	      return $(".add-on").hide();
+	    } else {
+	      return $(".add-on").show();
+	    }
+	  });
+	  return $(".add-on").show();
+	
+})
+
+
+
