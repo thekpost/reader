@@ -11,6 +11,12 @@ class FeedEntriesController < ApplicationController
     end
   end
 
+  def mark_to_read
+    if @feed_article.present?
+      @feed_article.update_attributes(is_to_read: params[:is_to_read])
+    end
+  end
+
   def update
     if !params[:is_star].blank?
       @feed_article.update_attributes(is_star: params[:is_star])

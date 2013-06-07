@@ -5,7 +5,7 @@
   %ul.nav.nav-tabs.nav-stacked{id: "feed_status", style: "padding: 0px; margin: 0px;"}
     %li{class: @home.blank? ? nil : "active"}
       = link_to "All Feeds (#{@total_subscriptions})", user_path(current_user)
-    %li{class: @to_read.blank? ? nil : "active"}
+    %li{id: "marked_to_read_feeds", class: @to_read.blank? ? nil : "active"}
       = link_to "To Read (#{@total_to_read})", user_path(current_user, :r => true)
     %li{id: "starred_feeds", class: @is_star.blank? ? nil : "active"}
       = link_to "Stared (#{@total_star})", user_path(current_user, :s => true)
@@ -82,12 +82,12 @@
                 %table
                   %tr
                     %td
-                      = link_to image_tag("stars/#{f.current_star}.png"), update_star_user_feed_entries_path(current_user, :id => f.id) , method: :put, remote: true
+                      = link_to image_tag("stars/#{f.current_star}.png"), update_star_user_feed_entries_path(current_user, :id => f.id) , method: :put, remote: true, id: "starred_image_link_#{f.id}"  
                     %td
                       - if f.is_to_read
-                        = link_to image_tag("mark_read.png"), user_feed_entry_path(current_user, f, is_to_read: false), method: :put
+                        = link_to image_tag("mark_read.png"), mark_to_read_user_feed_entries_path(current_user, :id => f.id, is_to_read: false), method: :put, id: "mark_read_link_#{f.id}", remote: true
                       - else
-                        = link_to image_tag("mark_to_read.png"), user_feed_entry_path(current_user, f, is_to_read: true), method: :put
+                        = link_to image_tag("mark_to_read.png"), mark_to_read_user_feed_entries_path(current_user, :id => f.id, is_to_read: true), method: :put, id: "mark_read_link_#{f.id}", remote: true
               %td.span10
                 #comments
                   %a{href: user_path(current_user, entry: f, anchor: f.id)}

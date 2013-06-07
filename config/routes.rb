@@ -15,6 +15,7 @@ RedFeed::Application.routes.draw do
 
     resources :feed_entries, :only => [:update, :show] do
       put 'update_star', on: :collection
+      put 'mark_to_read', on: :collection
     end
 
     resources :app_keys do
