@@ -2,12 +2,10 @@ development:
   adapter: postgresql
   encoding: unicode
   database: red_feed_development
-  host: 127.0.0.1
-  user: ritvvijparrikh
+  username: developer
   password:
   port: 5432
-  min_messages: warning
-  
+
 production:
   adapter: postgresql
   encoding: unicode

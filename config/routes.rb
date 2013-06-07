@@ -12,7 +12,11 @@ RedFeed::Application.routes.draw do
   
   resources :users do
     get "admin", "job", on: :member
-    resources :feed_entries
+
+    resources :feed_entries, :only => [:update, :show] do
+      put 'update_star', on: :collection
+    end
+
     resources :app_keys do
       get "request_fetch", on: :member
     end

@@ -1,5 +1,9 @@
 class FeedEntry < ActiveRecord::Base
   
+  # CONSTANTS
+  STARS = ['star0', 'star1', 'star2', 'star3', 'star4', 'star5', 'star6',
+           'star7', 'star8', 'star9', 'star10', 'star11', 'star12']
+
   #GEMS USED
   #ACCESSORS
   attr_accessible :app_key_id, :guid, :is_star, :is_to_read, :last_clicked_on, :name, :published_at, :summary, :url, :user_id, :categories, :author, :content

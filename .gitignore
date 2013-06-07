@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 .ruby-version
+config/database.yml
+db/schema.rb
+.rvmrc

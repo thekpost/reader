@@ -2,12 +2,12 @@
   = link_to "Subscribe", "#myModal1", :role => "button", "data-toggle"=>"modal", class: "btn btn-danger"
   %br
   %br
-  %ul.nav.nav-tabs.nav-stacked{id: "1", style: "padding: 0px; margin: 0px;"}
+  %ul.nav.nav-tabs.nav-stacked{id: "feed_status", style: "padding: 0px; margin: 0px;"}
     %li{class: @home.blank? ? nil : "active"}
       = link_to "All Feeds (#{@total_subscriptions})", user_path(current_user)
     %li{class: @to_read.blank? ? nil : "active"}
       = link_to "To Read (#{@total_to_read})", user_path(current_user, :r => true)
-    %li{class: @is_star.blank? ? nil : "active"}
+    %li{id: "starred_feeds", class: @is_star.blank? ? nil : "active"}
       = link_to "Stared (#{@total_star})", user_path(current_user, :s => true)
     %li{class: @history.blank? ? nil : "active"}
       = link_to "Read (#{@total_history})", user_path(current_user, :h => true)
@@ -82,10 +82,7 @@
                 %table
                   %tr
                     %td
-                      - if f.is_star
-                        = link_to image_tag("starred.png"), user_feed_entry_path(current_user, f, is_star: false), method: :put
-                      - else
-                        = link_to image_tag("star.png"), user_feed_entry_path(current_user, f, is_star: true), method: :put
+                      = link_to image_tag("stars/#{f.current_star}.png"), update_star_user_feed_entries_path(current_user, :id => f.id) , method: :put, remote: true
                     %td
                       - if f.is_to_read
                         = link_to image_tag("mark_read.png"), user_feed_entry_path(current_user, f, is_to_read: false), method: :put
